@@ -47,6 +47,18 @@ static void die(const char* msgfmt, ...)
     exit(EXIT_FAILURE);
 }
 
+/* Generic Warning Function
+ *****************************************************************************/
+static void warn(const char* msgfmt, ...)
+{
+    va_list args;
+    va_start(args, msgfmt);
+    fprintf(stderr, "Warning: ");
+    vfprintf(stderr, msgfmt, args);
+    fprintf(stderr, "\n");
+    va_end(args);
+}
+
 /* Signal Handling
  *****************************************************************************/
 static void esignal(int sig, void (*func)(int))

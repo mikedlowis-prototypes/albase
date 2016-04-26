@@ -28,7 +28,7 @@ static int opentty(void) {
     if (isatty(fd) == 0)
         die("%s is not a tty\n", TTY);
     if (ioctl(fd, TIOCSCTTY, (void *)1) != 0)
-        fprintf(stderr, "Warning: TIOCSCTTY: could not set controlling tty\n");
+        warn("TIOCSCTTY: could not set controlling tty\n");
     vhangup();
     close(fd);
     /* Now open it for real */
@@ -85,9 +85,9 @@ int main(int argc, char *argv[]) {
     dup2(fd, 1); // Make stdout the TTY
     dup2(fd, 2); // Make stderr the TTY
     if (fchown(fd, 0, 0) < 0)
-        fprintf(stderr, "fchown %s:", TTY);
+        warn("fchown %s:", TTY);
     if (fchmod(fd, 0600) < 0)
-        fprintf(stderr, "fchmod %s:", TTY);
+        warn("fchmod %s:", TTY);
     if (fd > 2)
         close(fd);
     sigignore(SIGHUP, 0); // stop ignoring SIGHUP
