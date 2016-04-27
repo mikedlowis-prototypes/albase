@@ -15,8 +15,6 @@ char* ARGV0;
 static char* TTY  = "/dev/tty1";
 static char* TERM = "linux";
 static char* UTMP = "/var/run/utmp";
-static char  Hostname[256] = {0};
-static char  Username[256] = {0};
 
 static void ignoresig(int signal, int ignore) {
     struct sigaction sigact;
@@ -30,16 +28,16 @@ static int opentty(void) {
     int fd;
     /* First reset the tty and take control if necessary */
     if ((fd = open(TTY, O_RDWR)) < 0)
-        die("Failed to open %s\n", TTY);
+        die("Failed to open %s", TTY);
     if (isatty(fd) == 0)
-        die("%s is not a tty\n", TTY);
+        die("%s is not a tty", TTY);
     if (ioctl(fd, TIOCSCTTY, (void *)1) != 0)
-        warn("TIOCSCTTY: could not set controlling tty\n");
+        warn("TIOCSCTTY: could not set controlling tty");
     vhangup();
     close(fd);
     /* Now open it for real */
     if ((fd = open(TTY, O_RDWR)) < 0)
-        die("Failed to open %s\n", TTY);
+        die("Failed to open %s", TTY);
     return fd;
 }
 
@@ -60,31 +58,6 @@ static void clearutmp(void) {
     fclose(fp);
 }
 
-static int dologin(void) {
-    int i = 0, c = 0;
-    /* Print the hostname */
-    if (gethostname(Hostname, sizeof(Hostname)) == 0)
-        printf("%s ", Hostname);
-    printf("login: ");
-    fflush(stdout);
-    /* Read in the username */
-    ioctl(0, TCFLSH, (void *)0);
-    while (1) {
-        if (0 == efread(&c, 1, 1, stdin))
-            return 1;
-        if (i >= (sizeof(Username) - 1))
-            die("login name too long\n");
-        if (c == '\n' || c == '\r')
-            break;
-        Username[i++] = c;
-    }
-    /* Execute the login command */
-    if ((Username[0] == '\0') || (Username[0] == '-'))
-        return 1;
-    else
-        return execlp("/bin/login", "login", "-p", Username, NULL);
-}
-
 int main(int argc, char *argv[]) {
     /* Print usage and exit if we receive any flags */
     OPTBEGIN{
@@ -98,15 +71,14 @@ int main(int argc, char *argv[]) {
     ignoresig(SIGHUP, 1); // ignore SIGHUP
     setenv("TERM", TERM, 1);
     setsid();
-    /* Open the TTY for normal usage */
     int fd = opentty();
     dup2(fd, 0); // Make stdin  the TTY
     dup2(fd, 1); // Make stdout the TTY
     dup2(fd, 2); // Make stderr the TTY
     if (fchown(fd, 0, 0) < 0)
-        warn("fchown %s:", TTY);
+        warn("chown of %s failed", TTY);
     if (fchmod(fd, 0600) < 0)
-        warn("fchmod %s:", TTY);
+        warn("chmod of %s failed", TTY);
     ignoresig(SIGHUP, 0); // stop ignoring SIGHUP
     /* clear all utmp entries for this TTY */
     clearutmp();
@@ -114,5 +86,5 @@ int main(int argc, char *argv[]) {
     if (argc > 2)
         return execvp(argv[2], &(argv[2]));
     else
-        return dologin();
+        return execlp("/bin/login", "login", "-p", NULL);
 }
