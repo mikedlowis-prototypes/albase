@@ -114,6 +114,22 @@ static FILE* efopen(const char* filename, const char* mode)
     return file;
 }
 
+size_t efread(void* ptr, size_t size, size_t nitems, FILE* stream)
+{
+    errno = 0;
+    size_t nbytes = fread(ptr, size, nitems, stream);
+    if (errno) die("fread error: %s", strerror(errno));
+    return nbytes;
+}
+
+size_t efwrite(const void* ptr, size_t size, size_t nitems, FILE* stream)
+{
+    errno = 0;
+    size_t nbytes = fwrite(ptr, size, nitems, stream);
+    if (errno) die("fwrite error: %s", strerror(errno));
+    return nbytes;
+}
+
 static char* efreadline(FILE* input)
 {
     size_t size  = 8;

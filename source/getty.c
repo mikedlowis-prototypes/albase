@@ -6,13 +6,19 @@
 #include "util.h"
 #include <unistd.h>
 #include <fcntl.h>
+#include <utmp.h>
+#include <errno.h>
 #include <sys/ioctl.h>
+#include <sys/stat.h>
 
 char* ARGV0;
 static char* TTY  = "/dev/tty1";
 static char* TERM = "linux";
+static char* UTMP = "/var/run/utmp";
+static char  Hostname[256] = {0};
+static char  Username[256] = {0};
 
-static void sigignore(int signal, int ignore) {
+static void ignoresig(int signal, int ignore) {
     struct sigaction sigact;
     sigact.sa_handler = (ignore ? SIG_IGN : SIG_DFL);
     sigact.sa_flags = 0;
@@ -37,33 +43,46 @@ static int opentty(void) {
     return fd;
 }
 
-static int dologin(void) {
-    //if (gethostname(hostname, sizeof(hostname)) == 0)
-    //    printf("%s ", hostname);
-    //printf("login: ");
-    //fflush(stdout);
+static void clearutmp(void) {
+    struct utmp usr;
+    FILE* fp = efopen(UTMP, "r+");
+    do {
+        int pos = ftell(fp);
+        efread(&usr, sizeof(usr), 1, fp);
+        if ((usr.ut_line[0] == '\0') || (strcmp(usr.ut_line, TTY) != 0))
+            continue;
+        memset(&usr, 0, sizeof(usr));
+        fseek(fp, pos, SEEK_SET);
+        efwrite(&usr, sizeof(usr), 1, fp);
+    } while (1);
+    if (ferror(fp))
+        warn("%s: I/O error:", UTMP);
+    fclose(fp);
+}
 
-    ///* Flush pending input */
-    //ioctl(0, TCFLSH, (void *)0);
-    //memset(logname, 0, sizeof(logname));
-    //while (1) {
-    //    n = read(0, &c, 1);
-    //    if (n < 0)
-    //        eprintf("read:");
-    //    if (n == 0)
-    //        return 1;
-    //    if (i >= sizeof(logname) - 1)
-    //        eprintf("login name too long\n");
-    //    if (c == '\n' || c == '\r')
-    //        break;
-    //    logname[i++] = c;
-    //}
-    //if (logname[0] == '-')
-    //    eprintf("login name cannot start with '-'\n");
-    //if (logname[0] == '\0')
-    //    return 1;
-    //return execlp("/bin/login", "login", "-p", logname, NULL);
-    return 0;
+static int dologin(void) {
+    int i = 0, c = 0;
+    /* Print the hostname */
+    if (gethostname(Hostname, sizeof(Hostname)) == 0)
+        printf("%s ", Hostname);
+    printf("login: ");
+    fflush(stdout);
+    /* Read in the username */
+    ioctl(0, TCFLSH, (void *)0);
+    while (1) {
+        if (0 == efread(&c, 1, 1, stdin))
+            return 1;
+        if (i >= (sizeof(Username) - 1))
+            die("login name too long\n");
+        if (c == '\n' || c == '\r')
+            break;
+        Username[i++] = c;
+    }
+    /* Execute the login command */
+    if ((Username[0] == '\0') || (Username[0] == '-'))
+        return 1;
+    else
+        return execlp("/bin/login", "login", "-p", Username, NULL);
 }
 
 int main(int argc, char *argv[]) {
@@ -76,7 +95,7 @@ int main(int argc, char *argv[]) {
     if (argc > 0) TTY  = argv[0];
     if (argc > 1) TERM = argv[1];
     /* setup the environment and session */
-    sigignore(SIGHUP, 1); // ignore SIGHUP
+    ignoresig(SIGHUP, 1); // ignore SIGHUP
     setenv("TERM", TERM, 1);
     setsid();
     /* Open the TTY for normal usage */
@@ -88,30 +107,9 @@ int main(int argc, char *argv[]) {
         warn("fchown %s:", TTY);
     if (fchmod(fd, 0600) < 0)
         warn("fchmod %s:", TTY);
-    if (fd > 2)
-        close(fd);
-    sigignore(SIGHUP, 0); // stop ignoring SIGHUP
+    ignoresig(SIGHUP, 0); // stop ignoring SIGHUP
     /* clear all utmp entries for this TTY */
-//    /* Clear all utmp entries for this tty */
-//    fp = fopen(UTMP_PATH, "r+");
-//    if (fp) {
-//        do {
-//            pos = ftell(fp);
-//            if (fread(&usr, sizeof(usr), 1, fp) != 1)
-//                break;
-//            if (usr.ut_line[0] == '\0')
-//                continue;
-//            if (strcmp(usr.ut_line, tty) != 0)
-//                continue;
-//            memset(&usr, 0, sizeof(usr));
-//            fseek(fp, pos, SEEK_SET);
-//            if (fwrite(&usr, sizeof(usr), 1, fp) != 1)
-//                break;
-//        } while (1);
-//        if (ferror(fp))
-//            weprintf("%s: I/O error:", UTMP_PATH);
-//        fclose(fp);
-//    }
+    clearutmp();
     /* Start the command or login prompt */
     if (argc > 2)
         return execvp(argv[2], &(argv[2]));

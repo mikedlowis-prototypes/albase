@@ -8,20 +8,13 @@ CC = cc
 LIBS     =
 INCS     = -Iinclude
 CPPFLAGS =
-CFLAGS   = -O2 ${INCS} ${CPPFLAGS}
-LDFLAGS  = ${LIBS}
-ECLEAN   =
+CFLAGS   = -O2 $(INCS) $(CPPFLAGS)
+LDFLAGS  = $(LIBS)
+BUILD    = $(CC) $(CFLAGS) -o $@ $<
 
 #------------------------------------------------------------------------------
 # Build-Specific Macros
 #------------------------------------------------------------------------------
-# Simple Single-file Binary Template
-define make-bin =
-$1: source/$1.c
-	$(CC) ${CFLAGS} -o $$@ $$<
-ECLEAN += $1
-endef
-
 BINS = init getty
 
 # load user-specific settings
@@ -34,12 +27,15 @@ BINS = init getty
 
 all: $(BINS)
 
-$(eval $(call make-bin,init))
-$(eval $(call make-bin,getty))
+init: source/init.c
+	$(BUILD)
+
+getty: source/getty.c
+	$(BUILD)
 
 clean:
-	$(RM) $(ECLEAN)
+	$(RM) $(BINS)
 
 # load dependency files
--include ${DEPS}
+-include $(DEPS)
 
