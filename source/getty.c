@@ -15,6 +15,8 @@ char* ARGV0;
 static char* TTY  = "/dev/tty1";
 static char* TERM = "linux";
 static char* UTMP = "/var/run/utmp";
+static char  Hostname[256] = {0};
+static char  Username[256] = {0};
 
 static void ignoresig(int signal, int ignore) {
     struct sigaction sigact;
