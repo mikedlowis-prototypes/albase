@@ -164,7 +164,7 @@ static char* estrdup(const char *s)
 }
 
 /* Option Parsing
- *
+ ******************************************************************************
  * This following macros implement a simple POSIX-style option parsing strategy.
  * They are heavily influenced and inspired by the arg.h file from suckless.org
  * (http://git.suckless.org/libsl/tree/arg.h). That file is in turn inspired by

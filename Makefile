@@ -7,7 +7,7 @@ CC = cc
 # flags
 LIBS     =
 INCS     = -Iinclude
-CPPFLAGS = $(INCS)
+CPPFLAGS = $(INCS) -D_XOPEN_SOURCE
 CFLAGS   = -O2 $(CPPFLAGS)
 LDFLAGS  = $(LIBS)
 BUILD    = $(CC) $(CFLAGS) -o $@ $<
@@ -34,7 +34,7 @@ getty: source/getty.c
 	$(BUILD)
 
 login: source/login.c
-	$(BUILD)
+	$(BUILD) -lcrypt
 
 clean:
 	$(RM) $(BINS)
