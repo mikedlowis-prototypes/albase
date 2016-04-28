@@ -7,15 +7,15 @@ CC = cc
 # flags
 LIBS     =
 INCS     = -Iinclude
-CPPFLAGS =
-CFLAGS   = -O2 $(INCS) $(CPPFLAGS)
+CPPFLAGS = $(INCS)
+CFLAGS   = -O2 $(CPPFLAGS)
 LDFLAGS  = $(LIBS)
 BUILD    = $(CC) $(CFLAGS) -o $@ $<
 
 #------------------------------------------------------------------------------
 # Build-Specific Macros
 #------------------------------------------------------------------------------
-BINS = init getty
+BINS = init getty login
 
 # load user-specific settings
 -include config.mk
@@ -31,6 +31,9 @@ init: source/init.c
 	$(BUILD)
 
 getty: source/getty.c
+	$(BUILD)
+
+login: source/login.c
 	$(BUILD)
 
 clean:
