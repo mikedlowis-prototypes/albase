@@ -14,7 +14,6 @@
 char* ARGV0;
 static char* Hostname = NULL;
 static char* Username = NULL;
-static char* Password = NULL;
 static bool  PreserveEnv = false;
 
 static char* get_host(void) {
@@ -86,15 +85,9 @@ static struct passwd* check_pass(const char* user, char* pass) {
 int main(int argc, char** argv) {
     /* Parse command line options */
     OPTBEGIN {
-        case 'p':
-            PreserveEnv = true;
-            break;
-        case 'h':
-            Hostname = EOPTARG(die("no hostname provided"));
-            break;
-        case 'u':
-            Username = EOPTARG(die("no username provided"));
-            break;
+        case 'p': PreserveEnv = true;                              break;
+        case 'h': Hostname = EOPTARG(die("no hostname provided")); break;
+        case 'u': Username = EOPTARG(die("no username provided")); break;
         default:
             fprintf(stderr,"Usage: %s [-p] [-h host] [-u user]", ARGV0);
             exit(EXIT_FAILURE);
@@ -123,8 +116,7 @@ int main(int argc, char** argv) {
         check(chdir(pwentry->pw_dir), "chdir failed");
         execlp(shell, shell, "-l", NULL);
     }
-
-    /* Handle any unexpected errors that occurred */
+    /* Landing pad for check macro failures */
 error:
     return (errno == ENOENT) ? 127 : 126;
 }
