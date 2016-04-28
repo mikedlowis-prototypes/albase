@@ -15,7 +15,7 @@ BUILD    = $(CC) $(CFLAGS) -o $@ $<
 #------------------------------------------------------------------------------
 # Build-Specific Macros
 #------------------------------------------------------------------------------
-BINS = init getty login
+BINS = init getty login dmesg
 
 # load user-specific settings
 -include config.mk
@@ -35,6 +35,9 @@ getty: source/getty.c
 
 login: source/login.c
 	$(BUILD) -lcrypt
+
+dmesg: source/dmesg.c
+	$(BUILD)
 
 clean:
 	$(RM) $(BINS)

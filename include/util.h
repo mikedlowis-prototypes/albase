@@ -31,6 +31,28 @@ typedef signed char schar;
 typedef long long vlong;
 typedef unsigned long long uvlong;
 
+/* Error Handling Macros
+ *****************************************************************************/
+#ifdef NDEBUG
+    #define debug(msg, ...) \
+        ((void)0)
+#else
+    #define debug(msg, ...) \
+        fprintf(stderr, "DEBUG %s:%d: " msg "\n", __FILE__, __LINE__, ##__VA_ARGS__)
+#endif
+
+#define errnostr() \
+    (errno == 0 ? "None" : strerror(errno))
+
+#define print_error(msg, ...) \
+    fprintf(stderr, "[ERROR] (%s:%d: errno: %s) " msg "\n", __FILE__, __LINE__, errnostr(), ##__VA_ARGS__)
+
+#define check(expr, msg, ...) \
+    if(!(expr)) { print_error(msg, ##__VA_ARGS__); errno=0; goto error; }
+
+#define sentinel(msg, ...) \
+    { print_error(msg, ##__VA_ARGS__); errno=0; goto error; }
+
 /* Generic Death Function
  *****************************************************************************/
 static void die(const char* msgfmt, ...)
@@ -163,6 +185,22 @@ static char* estrdup(const char *s)
     return ns;
 }
 
+static long int estrtol(const char* str, int base) {
+    errno = 0;
+    long int result = strtol(str, NULL, base);
+    if (errno)
+        die("estrtol failed: %s", errnostr());
+    return result;
+}
+
+static unsigned long int estrtoul(const char* str, int base) {
+    errno = 0;
+    unsigned long int result = strtol(str, NULL, base);
+    if (errno)
+        die("estrtoul failed: %s", errnostr());
+    return result;
+}
+
 /* Option Parsing
  ******************************************************************************
  * This following macros implement a simple POSIX-style option parsing strategy.
@@ -261,28 +299,6 @@ static inline char* _getopt_(int* p_argc, char*** p_argv) {
 /* Helper macro to recognize "long" options ala GNU style. */
 #define OPTLONG \
     case '-'
-
-/* Error Handling
- *****************************************************************************/
-#ifdef NDEBUG
-    #define debug(msg, ...) \
-        ((void)0)
-#else
-    #define debug(msg, ...) \
-        fprintf(stderr, "DEBUG %s:%d: " msg "\n", __FILE__, __LINE__, ##__VA_ARGS__)
-#endif
-
-#define errnostr() \
-    (errno == 0 ? "None" : strerror(errno))
-
-#define print_error(msg, ...) \
-    fprintf(stderr, "[ERROR] (%s:%d: errno: %s) " msg "\n", __FILE__, __LINE__, errnostr(), ##__VA_ARGS__)
-
-#define check(expr, msg, ...) \
-    if(!(expr)) { print_error(msg, ##__VA_ARGS__); errno=0; goto error; }
-
-#define sentinel(msg, ...) \
-    { print_error(msg, ##__VA_ARGS__); errno=0; goto error; }
 
 /* Miscellaneous
  *****************************************************************************/
