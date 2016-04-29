@@ -1,24 +1,25 @@
-MKSH_SUBDIR = source/sh
 MKSH_BIN    = sh
+MKSH_SUBDIR = source/sh
+MKSH_OBJDIR = $(OBJDIR)/sh
 MKSH_CCCMD  = $(CC) $(CFLAGS) -I$(MKSH_SUBDIR) $(MKSH_DEFINES) -c -o $@ $^
 MKSH_LDCMD  = $(CC) -o $@ $^
 
 MKSH_OBJS =                  \
-    $(MKSH_SUBDIR)/lalloc.o  \
-    $(MKSH_SUBDIR)/eval.o    \
-    $(MKSH_SUBDIR)/exec.o    \
-    $(MKSH_SUBDIR)/expr.o    \
-    $(MKSH_SUBDIR)/funcs.o   \
-    $(MKSH_SUBDIR)/histrap.o \
-    $(MKSH_SUBDIR)/jobs.o    \
-    $(MKSH_SUBDIR)/lex.o     \
-    $(MKSH_SUBDIR)/main.o    \
-    $(MKSH_SUBDIR)/misc.o    \
-    $(MKSH_SUBDIR)/shf.o     \
-    $(MKSH_SUBDIR)/syn.o     \
-    $(MKSH_SUBDIR)/tree.o    \
-    $(MKSH_SUBDIR)/var.o     \
-    $(MKSH_SUBDIR)/edit.o
+    $(MKSH_OBJDIR)/lalloc.o  \
+    $(MKSH_OBJDIR)/eval.o    \
+    $(MKSH_OBJDIR)/exec.o    \
+    $(MKSH_OBJDIR)/expr.o    \
+    $(MKSH_OBJDIR)/funcs.o   \
+    $(MKSH_OBJDIR)/histrap.o \
+    $(MKSH_OBJDIR)/jobs.o    \
+    $(MKSH_OBJDIR)/lex.o     \
+    $(MKSH_OBJDIR)/main.o    \
+    $(MKSH_OBJDIR)/misc.o    \
+    $(MKSH_OBJDIR)/shf.o     \
+    $(MKSH_OBJDIR)/syn.o     \
+    $(MKSH_OBJDIR)/tree.o    \
+    $(MKSH_OBJDIR)/var.o     \
+    $(MKSH_OBJDIR)/edit.o
 
 MKSH_DEFINES =                  \
     -DMKSH_BUILD_R=523          \
@@ -85,50 +86,50 @@ MKSH_DEFINES =                  \
     -DHAVE_SYS_SIGLIST_DECL=1   \
     -DHAVE_PERSISTENT_HISTORY=1
 
-$(MKSH_BIN): $(MKSH_OBJS)
+$(BINDIR)/$(MKSH_BIN): $(MKSH_OBJS)
 	$(MKSH_LDCMD)
 
-$(MKSH_SUBDIR)/lalloc.o: $(MKSH_SUBDIR)/lalloc.c
+$(MKSH_OBJDIR)/lalloc.o: $(MKSH_SUBDIR)/lalloc.c
 	$(MKSH_CCCMD)
 
-$(MKSH_SUBDIR)/eval.o: $(MKSH_SUBDIR)/eval.c
+$(MKSH_OBJDIR)/eval.o: $(MKSH_SUBDIR)/eval.c
 	$(MKSH_CCCMD)
 
-$(MKSH_SUBDIR)/exec.o: $(MKSH_SUBDIR)/exec.c
+$(MKSH_OBJDIR)/exec.o: $(MKSH_SUBDIR)/exec.c
 	$(MKSH_CCCMD)
 
-$(MKSH_SUBDIR)/expr.o: $(MKSH_SUBDIR)/expr.c
+$(MKSH_OBJDIR)/expr.o: $(MKSH_SUBDIR)/expr.c
 	$(MKSH_CCCMD)
 
-$(MKSH_SUBDIR)/funcs.o: $(MKSH_SUBDIR)/funcs.c
+$(MKSH_OBJDIR)/funcs.o: $(MKSH_SUBDIR)/funcs.c
 	$(MKSH_CCCMD)
 
-$(MKSH_SUBDIR)/histrap.o: $(MKSH_SUBDIR)/histrap.c
+$(MKSH_OBJDIR)/histrap.o: $(MKSH_SUBDIR)/histrap.c
 	$(MKSH_CCCMD)
 
-$(MKSH_SUBDIR)/jobs.o: $(MKSH_SUBDIR)/jobs.c
+$(MKSH_OBJDIR)/jobs.o: $(MKSH_SUBDIR)/jobs.c
 	$(MKSH_CCCMD)
 
-$(MKSH_SUBDIR)/lex.o: $(MKSH_SUBDIR)/lex.c
+$(MKSH_OBJDIR)/lex.o: $(MKSH_SUBDIR)/lex.c
 	$(MKSH_CCCMD)
 
-$(MKSH_SUBDIR)/main.o: $(MKSH_SUBDIR)/main.c
+$(MKSH_OBJDIR)/main.o: $(MKSH_SUBDIR)/main.c
 	$(MKSH_CCCMD)
 
-$(MKSH_SUBDIR)/misc.o: $(MKSH_SUBDIR)/misc.c
+$(MKSH_OBJDIR)/misc.o: $(MKSH_SUBDIR)/misc.c
 	$(MKSH_CCCMD)
 
-$(MKSH_SUBDIR)/shf.o: $(MKSH_SUBDIR)/shf.c
+$(MKSH_OBJDIR)/shf.o: $(MKSH_SUBDIR)/shf.c
 	$(MKSH_CCCMD)
 
-$(MKSH_SUBDIR)/syn.o: $(MKSH_SUBDIR)/syn.c
+$(MKSH_OBJDIR)/syn.o: $(MKSH_SUBDIR)/syn.c
 	$(MKSH_CCCMD)
 
-$(MKSH_SUBDIR)/tree.o: $(MKSH_SUBDIR)/tree.c
+$(MKSH_OBJDIR)/tree.o: $(MKSH_SUBDIR)/tree.c
 	$(MKSH_CCCMD)
 
-$(MKSH_SUBDIR)/var.o: $(MKSH_SUBDIR)/var.c
+$(MKSH_OBJDIR)/var.o: $(MKSH_SUBDIR)/var.c
 	$(MKSH_CCCMD)
 
-$(MKSH_SUBDIR)/edit.o: $(MKSH_SUBDIR)/edit.c
+$(MKSH_OBJDIR)/edit.o: $(MKSH_SUBDIR)/edit.c
 	$(MKSH_CCCMD)
