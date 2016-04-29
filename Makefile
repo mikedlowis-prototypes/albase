@@ -7,15 +7,16 @@ CC = cc
 # flags
 LIBS     =
 INCS     = -Iinclude
-CPPFLAGS = $(INCS) -D_XOPEN_SOURCE
-CFLAGS   = -O2 $(CPPFLAGS)
+DEFS     = -D_XOPEN_SOURCE=700 -D_POSIX_C_SOURCE=200809L
+CPPFLAGS = $(INCS) $(DEFS)
+CFLAGS   = -O2
 LDFLAGS  = $(LIBS)
-BUILD    = $(CC) $(CFLAGS) -o $@ $<
+BUILD    = $(CC) $(CPPFLAGS) $(CFLAGS) -o $@ $<
 
 #------------------------------------------------------------------------------
 # Build-Specific Macros
 #------------------------------------------------------------------------------
-BINS = init getty login dmesg
+BINS = init getty login dmesg sh
 
 # load user-specific settings
 -include config.mk
@@ -39,8 +40,10 @@ login: source/login.c
 dmesg: source/dmesg.c
 	$(BUILD)
 
+include source/sh/Rules.mk
+
 clean:
-	$(RM) $(BINS)
+	$(RM) $(BINS) $(MKSH_OBJS)
 
 # load dependency files
 -include $(DEPS)
