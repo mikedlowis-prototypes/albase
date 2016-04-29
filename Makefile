@@ -7,15 +7,27 @@ CC = cc
 # flags
 LIBS     =
 INCS     = -Iinclude
-CPPFLAGS = $(INCS) -D_XOPEN_SOURCE
-CFLAGS   = -O2 $(CPPFLAGS)
+DEFS     = -D_XOPEN_SOURCE=700 -D_POSIX_C_SOURCE=200809L
+CPPFLAGS = $(INCS) $(DEFS)
+CFLAGS   = -O2
 LDFLAGS  = $(LIBS)
-BUILD    = $(CC) $(CFLAGS) -o $@ $<
+BUILD    = $(CC) $(CPPFLAGS) $(CFLAGS) -o $@ $^
+
+# dirs
+BUILDDIR = build
+BINDIR   = $(BUILDDIR)/bin
+OBJDIR   = $(BUILDDIR)/obj
 
 #------------------------------------------------------------------------------
 # Build-Specific Macros
 #------------------------------------------------------------------------------
-BINS = init getty login dmesg
+BINS =              \
+    $(BINDIR)/init  \
+    $(BINDIR)/getty \
+    $(BINDIR)/login \
+    $(BINDIR)/dmesg \
+    $(BINDIR)/mount \
+    $(BINDIR)/sh
 
 # load user-specific settings
 -include config.mk
@@ -23,24 +35,32 @@ BINS = init getty login dmesg
 #------------------------------------------------------------------------------
 # Phony Targets
 #------------------------------------------------------------------------------
-.PHONY: all
+.PHONY: all dirs
 
-all: $(BINS)
+all: dirs $(BINS)
 
-init: source/init.c
+dirs:
+	mkdir -p $(BINDIR) $(OBJDIR) $(MKSH_OBJDIR)
+
+$(BINDIR)/init: source/init.c
 	$(BUILD)
 
-getty: source/getty.c
+$(BINDIR)/getty: source/getty.c
 	$(BUILD)
 
-login: source/login.c
+$(BINDIR)/login: source/login.c
 	$(BUILD) -lcrypt
 
-dmesg: source/dmesg.c
+$(BINDIR)/dmesg: source/dmesg.c
 	$(BUILD)
 
+$(BINDIR)/mount: source/mount.c
+	$(BUILD)
+
+include source/sh/Rules.mk
+
 clean:
-	$(RM) $(BINS)
+	$(RM) $(BINS) $(MKSH_OBJS)
 
 # load dependency files
 -include $(DEPS)
