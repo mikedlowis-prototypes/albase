@@ -23,7 +23,6 @@ MKSH_OBJS =                  \
 MKSH_DEFINES =                  \
     -DMKSH_BUILD_R=523          \
     -DMKSH_BUILDSH              \
-    -D_DARWIN_C_SOURCE          \
     -DHAVE_ATTRIBUTE_BOUNDED=1  \
     -DHAVE_ATTRIBUTE_FORMAT=1   \
     -DHAVE_ATTRIBUTE_NORETURN=1 \
