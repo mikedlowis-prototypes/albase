@@ -11,7 +11,7 @@ DEFS     = -D_XOPEN_SOURCE=700 -D_POSIX_C_SOURCE=200809L
 CPPFLAGS = $(INCS) $(DEFS)
 CFLAGS   = -O2
 LDFLAGS  = $(LIBS)
-BUILD    = $(CC) $(CPPFLAGS) $(CFLAGS) -o $(BINDIR)/$@ $^
+BUILD    = $(CC) $(CPPFLAGS) $(CFLAGS) -o $@ $^
 
 # dirs
 BUILDDIR = build
@@ -26,6 +26,7 @@ BINS =              \
     $(BINDIR)/getty \
     $(BINDIR)/login \
     $(BINDIR)/dmesg \
+    $(BINDIR)/mount \
     $(BINDIR)/sh
 
 # load user-specific settings
@@ -51,6 +52,9 @@ $(BINDIR)/login: source/login.c
 	$(BUILD) -lcrypt
 
 $(BINDIR)/dmesg: source/dmesg.c
+	$(BUILD)
+
+$(BINDIR)/mount: source/mount.c
 	$(BUILD)
 
 include source/sh/Rules.mk
