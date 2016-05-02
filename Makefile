@@ -18,50 +18,33 @@ BUILDDIR = build
 BINDIR   = $(BUILDDIR)/bin
 OBJDIR   = $(BUILDDIR)/obj
 
-#------------------------------------------------------------------------------
-# Build-Specific Macros
-#------------------------------------------------------------------------------
-BINS =              \
-    $(BINDIR)/init  \
-    $(BINDIR)/getty \
-    $(BINDIR)/login \
-    $(BINDIR)/dmesg \
-    $(BINDIR)/mount \
-    $(BINDIR)/sh
-
-# load user-specific settings
--include config.mk
+# targets
+BINS =
+ECLEAN =
 
 #------------------------------------------------------------------------------
-# Phony Targets
+# Ensure The Build Dir Exists
 #------------------------------------------------------------------------------
-.PHONY: all dirs
+$(BUILDDIR)/dummy:
+	mkdir -p $(BUILDDIR) $(BINDIR) $(OBJDIR) $(MKSH_OBJDIR)
+	touch $@
+-include $(BUILDDIR)/dummy
 
-all: dirs $(BINS)
-
-dirs:
-	mkdir -p $(BINDIR) $(OBJDIR) $(MKSH_OBJDIR)
-
-$(BINDIR)/init: source/init.c
-	$(BUILD)
-
-$(BINDIR)/getty: source/getty.c
-	$(BUILD)
-
-$(BINDIR)/login: source/login.c
-	$(BUILD) -lcrypt
-
-$(BINDIR)/dmesg: source/dmesg.c
-	$(BUILD)
-
-$(BINDIR)/mount: source/mount.c
-	$(BUILD)
-
+#------------------------------------------------------------------------------
+# Build Rules
+#------------------------------------------------------------------------------
+include source/Rules.mk
 include source/sh/Rules.mk
 
-clean:
-	$(RM) $(BINS) $(MKSH_OBJS)
+.PHONY: all $(BINS)
 
-# load dependency files
+all: $(BINS)
+
+clean:
+	$(RM) $(ECLEAN)
+
+# load dependency files if they exist
 -include $(DEPS)
 
+# load user-specific settings if they exist
+-include config.mk
