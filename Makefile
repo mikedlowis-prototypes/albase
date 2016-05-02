@@ -19,16 +19,9 @@ BINDIR   = $(BUILDDIR)/bin
 OBJDIR   = $(BUILDDIR)/obj
 
 # targets
-BINS =
+BINS   =
 ECLEAN =
-
-#------------------------------------------------------------------------------
-# Ensure The Build Dir Exists
-#------------------------------------------------------------------------------
-$(BUILDDIR)/dummy:
-	mkdir -p $(BUILDDIR) $(BINDIR) $(OBJDIR) $(MKSH_OBJDIR)
-	touch $@
--include $(BUILDDIR)/dummy
+DIRS   = $(BUILDDIR) $(BINDIR) $(OBJDIR)
 
 #------------------------------------------------------------------------------
 # Build Rules
@@ -48,3 +41,12 @@ clean:
 
 # load user-specific settings if they exist
 -include config.mk
+
+#------------------------------------------------------------------------------
+# Ensure The Build Dir Exists
+#------------------------------------------------------------------------------
+$(BUILDDIR)/dummy:
+	mkdir -p $(DIRS)
+	touch $@
+-include $(BUILDDIR)/dummy
+

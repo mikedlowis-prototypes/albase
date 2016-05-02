@@ -4,6 +4,7 @@ MKSH_OBJDIR  = $(OBJDIR)/sh
 MKSH_CCCMD   = $(CC) $(CFLAGS) -I$(MKSH_SUBDIR) $(MKSH_DEFINES) -c -o $@ $^
 MKSH_LDCMD   = $(CC) -o $@ $^
 BINS        += $(MKSH_BIN)
+DIRS        += $(MKSH_OBJDIR)
 ECLEAN      += $(BINDIR)/$(MKSH_BIN) $(MKSH_OBJS)
 
 MKSH_OBJS =                  \
