@@ -37,13 +37,11 @@ UBASE_BINS =    \
     ctrlaltdel  \
     dd          \
     df          \
-    dmesg       \
     eject       \
     fallocate   \
     free        \
     freeramdisk \
     fsfreeze    \
-    getty       \
     halt        \
     hwclock     \
     id          \
@@ -51,7 +49,6 @@ UBASE_BINS =    \
     killall5    \
     last        \
     lastlog     \
-    login       \
     lsmod       \
     lsusb       \
     mesg        \

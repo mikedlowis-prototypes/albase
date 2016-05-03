@@ -35,14 +35,15 @@ DIRS   = $(BUILDDIR) $(BINDIR) $(OBJDIR)
 include source/Rules.mk
 include source/sh/Rules.mk
 include source/ubase/Rules.mk
-#include source/sbase/Rules.mk
+include source/sbase/Rules.mk
 
 .PHONY: all $(BINS)
 
 all: $(BINS)
 
 clean:
-	$(RM) $(ECLEAN)
+	@echo cleaning
+	@$(RM) $(BUILDDIR)/dummy $(ECLEAN)
 
 # load dependency files if they exist
 -include $(DEPS)
