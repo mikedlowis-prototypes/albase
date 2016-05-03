@@ -3,22 +3,28 @@
 #------------------------------------------------------------------------------
 # tools
 CC = cc
+LD = $(CC)
+AR = ar
 
 # flags
 LIBS     =
 INCS     = -Iinclude
 DEFS     = -D_XOPEN_SOURCE=700 -D_POSIX_C_SOURCE=200809L
 CPPFLAGS = $(INCS) $(DEFS)
-CFLAGS   = -O2
+CFLAGS   = -O2 --std=gnu99
 LDFLAGS  = $(LIBS)
-BUILD    = $(CC) $(CPPFLAGS) $(CFLAGS) -o $@ $^
+ARFLAGS  = rcs
+
+# commands
+BUILD   = $(CC) $(CPPFLAGS) $(CFLAGS) -o $@ $^
+ARCHIVE = $(AR) $(ARFLAGS) $@ $^
 
 # dirs
 BUILDDIR = build
 BINDIR   = $(BUILDDIR)/bin
 OBJDIR   = $(BUILDDIR)/obj
 
-# targets
+# collections
 BINS   =
 ECLEAN =
 DIRS   = $(BUILDDIR) $(BINDIR) $(OBJDIR)
@@ -28,6 +34,8 @@ DIRS   = $(BUILDDIR) $(BINDIR) $(OBJDIR)
 #------------------------------------------------------------------------------
 include source/Rules.mk
 include source/sh/Rules.mk
+include source/ubase/Rules.mk
+#include source/sbase/Rules.mk
 
 .PHONY: all $(BINS)
 
