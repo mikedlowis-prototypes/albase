@@ -1,10 +1,14 @@
 #------------------------------------------------------------------------------
 # Build Configuration
 #------------------------------------------------------------------------------
+# architecture
+ARCH = x86_64
+
 # tools
-CC = cc
-LD = $(CC)
-AR = ar
+REALCC = cc
+CC     = $(BINDIR)/musl-gcc
+LD     = $(CC)
+AR     = ar
 
 # flags
 LIBS     =
@@ -16,7 +20,7 @@ LDFLAGS  = $(LIBS)
 ARFLAGS  = rcs
 
 # commands
-BUILD   = $(CC) $(CPPFLAGS) $(CFLAGS) -o $@ $^
+BUILD   = $(CC) $(CPPFLAGS) $(CFLAGS) -o $@ $<
 ARCHIVE = $(AR) $(ARFLAGS) $@ $^
 
 # dirs
@@ -34,11 +38,12 @@ DIRS   = $(BUILDDIR) $(BINDIR) $(LIBDIR) $(OBJDIR)
 #------------------------------------------------------------------------------
 # Build Rules
 #------------------------------------------------------------------------------
+include source/musl/Rules.mk
 include source/Rules.mk
-include source/sh/Rules.mk
 include source/ubase/Rules.mk
 include source/sbase/Rules.mk
-include source/musl/Rules.mk
+include source/sh/Rules.mk
+#include source/shadow/Rules.mk
 
 .PHONY: all $(PHONY)
 

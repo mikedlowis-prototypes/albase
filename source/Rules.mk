@@ -1,8 +1,10 @@
-BINS       += $(SRC_BINS)
-ECLEAN     += $(addprefix $(BINDIR)/, $(SRC_BINS))
+PHONY  += albase
+ECLEAN += $(addprefix $(BINDIR)/, $(SRC_BINS))
 
 SRC_SUBDIR  = source
 SRC_BINS    = init getty login dmesg mount
+
+albase: $(SRC_BINS)
 
 init:  $(BINDIR)/init
 getty: $(BINDIR)/getty
@@ -10,9 +12,5 @@ login: $(BINDIR)/login
 dmesg: $(BINDIR)/dmesg
 mount: $(BINDIR)/mount
 
-$(BINDIR)/%: $(SRC_SUBDIR)/%.c
+$(BINDIR)/%: $(SRC_SUBDIR)/%.c $(CC)
 	$(BUILD)
-
-$(BINDIR)/login: $(SRC_SUBDIR)/login.c
-	$(BUILD) -lcrypt
-

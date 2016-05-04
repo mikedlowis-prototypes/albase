@@ -9,7 +9,7 @@ UBASE_OBJDIR  = $(OBJDIR)/ubase
 UBASE_LIBUTIL = $(UBASE_OBJDIR)/libutil.a
 UBASE_DEFS    = -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64
 UBASE_COMPILE = $(CC) $(UBASE_DEFS) $(CFLAGS) $(CPPFLAGS) -I$(UBASE_SUBDIR) -o $@ -c $<
-UBASE_BUILD   = $(CC) $(UBASE_DEFS) $(CFLAGS) $(CPPFLAGS) -I$(UBASE_SUBDIR) -o $@ $^
+UBASE_BUILD   = $(CC) $(UBASE_DEFS) $(CFLAGS) $(CPPFLAGS) -I$(UBASE_SUBDIR) -o $@ $<
 UBASE_ARCHIVE = $(AR) $(ARFLAGS) $@ $^
 
 UBASE_LIBUTIL_OBJS =                 \
@@ -85,61 +85,8 @@ ubase: $(UBASE_BINS)
 $(UBASE_LIBUTIL): $(UBASE_LIBUTIL_OBJS)
 	$(UBASE_ARCHIVE)
 
-$(UBASE_OBJDIR)/%.o: $(UBASE_SUBDIR)/libutil/%.c
+$(UBASE_OBJDIR)/%.o: $(UBASE_SUBDIR)/libutil/%.c $(CC)
 	$(UBASE_COMPILE)
 
-$(BINDIR)/%: $(UBASE_SUBDIR)/%.c $(UBASE_LIBUTIL)
-	$(UBASE_BUILD)
-
-$(BINDIR)/passwd: $(UBASE_SUBDIR)/passwd.c $(UBASE_LIBUTIL)
-	$(UBASE_BUILD) -lcrypt
-
-$(BINDIR)/su: $(UBASE_SUBDIR)/su.c $(UBASE_LIBUTIL)
-	$(UBASE_BUILD) -lcrypt
-
-#chvt: $(BINDIR)/chvt
-#clear: $(BINDIR)/clear
-#ctrlaltdel: $(BINDIR)/ctrlaltdel
-#dd: $(BINDIR)/dd
-#df: $(BINDIR)/df
-#eject: $(BINDIR)/eject
-#fallocate: $(BINDIR)/fallocate
-#free: $(BINDIR)/free
-#freeramdisk: $(BINDIR)/freeramdisk
-#fsfreeze: $(BINDIR)/fsfreeze
-#halt: $(BINDIR)/halt
-#hwclock: $(BINDIR)/hwclock
-#id: $(BINDIR)/id
-#insmod: $(BINDIR)/insmod
-#killall5: $(BINDIR)/killall5
-#last: $(BINDIR)/last
-#lastlog: $(BINDIR)/lastlog
-#lsmod: $(BINDIR)/lsmod
-#lsusb: $(BINDIR)/lsusb
-#mesg: $(BINDIR)/mesg
-#mknod: $(BINDIR)/mknod
-#mkswap: $(BINDIR)/mkswap
-#mountpoint: $(BINDIR)/mountpoint
-#nologin: $(BINDIR)/nologin
-#pagesize: $(BINDIR)/pagesize
-#passwd: $(BINDIR)/passwd
-#pidof: $(BINDIR)/pidof
-#pivot_root: $(BINDIR)/pivot_root
-#ps: $(BINDIR)/ps
-#readahead: $(BINDIR)/readahead
-#respawn: $(BINDIR)/respawn
-#rmmod: $(BINDIR)/rmmod
-#stat: $(BINDIR)/stat
-#su: $(BINDIR)/su
-#swaplabel: $(BINDIR)/swaplabel
-#swapoff: $(BINDIR)/swapoff
-#swapon: $(BINDIR)/swapon
-#switch_root: $(BINDIR)/switch_root
-#sysctl: $(BINDIR)/sysctl
-#truncate: $(BINDIR)/truncate
-#unmount: $(BINDIR)/unmount
-#unshare: $(BINDIR)/unshare
-#uptime: $(BINDIR)/uptime
-#vtallow: $(BINDIR)/vtallow
-#watch: $(BINDIR)/watch
-#who: $(BINDIR)/who
+$(BINDIR)/%: $(UBASE_SUBDIR)/%.c $(UBASE_LIBUTIL) $(CC)
+	$(UBASE_BUILD) $(UBASE_LIBUTIL)
