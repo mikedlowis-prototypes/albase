@@ -22,9 +22,11 @@ ARCHIVE = $(AR) $(ARFLAGS) $@ $^
 # dirs
 BUILDDIR = build
 BINDIR   = $(BUILDDIR)/bin
+LIBDIR   = $(BUILDDIR)/lib
 OBJDIR   = $(BUILDDIR)/obj
 
 # collections
+PHONY  =
 BINS   =
 ECLEAN =
 DIRS   = $(BUILDDIR) $(BINDIR) $(OBJDIR)
@@ -37,9 +39,9 @@ include source/sh/Rules.mk
 include source/ubase/Rules.mk
 include source/sbase/Rules.mk
 
-.PHONY: all $(BINS)
+.PHONY: all $(PHONY)
 
-all: $(BINS)
+all: $(PHONY)
 
 clean:
 	@echo cleaning
@@ -58,4 +60,3 @@ $(BUILDDIR)/dummy:
 	mkdir -p $(DIRS)
 	touch $@
 -include $(BUILDDIR)/dummy
-

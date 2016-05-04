@@ -1,11 +1,10 @@
+PHONY  += $(MKSH_BIN)
+DIRS   += $(MKSH_OBJDIR)
+ECLEAN += $(BINDIR)/$(MKSH_BIN) $(MKSH_OBJS)
+
 MKSH_BIN     = sh
 MKSH_SUBDIR  = source/sh
 MKSH_OBJDIR  = $(OBJDIR)/sh
-MKSH_CCCMD   = $(CC) $(CFLAGS) -I$(MKSH_SUBDIR) $(MKSH_DEFINES) -c -o $@ $^
-MKSH_LDCMD   = $(CC) -o $@ $^
-BINS        += $(MKSH_BIN)
-DIRS        += $(MKSH_OBJDIR)
-ECLEAN      += $(BINDIR)/$(MKSH_BIN) $(MKSH_OBJS)
 
 MKSH_OBJS =                  \
     $(MKSH_OBJDIR)/lalloc.o  \
@@ -90,56 +89,10 @@ MKSH_DEFINES =                  \
     -DHAVE_SYS_SIGLIST_DECL=1   \
     -DHAVE_PERSISTENT_HISTORY=1
 
-sh: $(BINDIR)/$(MKSH_BIN)
+$(MKSH_BIN): $(BINDIR)/$(MKSH_BIN)
 
 $(BINDIR)/$(MKSH_BIN): $(MKSH_OBJS)
-	$(MKSH_LDCMD)
+	$(LD) -o $@ $^ $(LDFLAGS)
 
-$(MKSH_OBJDIR)/lalloc.o: $(MKSH_SUBDIR)/lalloc.c
-	$(MKSH_CCCMD)
-
-$(MKSH_OBJDIR)/eval.o: $(MKSH_SUBDIR)/eval.c
-	$(MKSH_CCCMD)
-
-$(MKSH_OBJDIR)/exec.o: $(MKSH_SUBDIR)/exec.c
-	$(MKSH_CCCMD)
-
-$(MKSH_OBJDIR)/expr.o: $(MKSH_SUBDIR)/expr.c
-	$(MKSH_CCCMD)
-
-$(MKSH_OBJDIR)/funcs.o: $(MKSH_SUBDIR)/funcs.c
-	$(MKSH_CCCMD)
-
-$(MKSH_OBJDIR)/histrap.o: $(MKSH_SUBDIR)/histrap.c
-	$(MKSH_CCCMD)
-
-$(MKSH_OBJDIR)/jobs.o: $(MKSH_SUBDIR)/jobs.c
-	$(MKSH_CCCMD)
-
-$(MKSH_OBJDIR)/lex.o: $(MKSH_SUBDIR)/lex.c
-	$(MKSH_CCCMD)
-
-$(MKSH_OBJDIR)/main.o: $(MKSH_SUBDIR)/main.c
-	$(MKSH_CCCMD)
-
-$(MKSH_OBJDIR)/misc.o: $(MKSH_SUBDIR)/misc.c
-	$(MKSH_CCCMD)
-
-$(MKSH_OBJDIR)/shf.o: $(MKSH_SUBDIR)/shf.c
-	$(MKSH_CCCMD)
-
-$(MKSH_OBJDIR)/syn.o: $(MKSH_SUBDIR)/syn.c
-	$(MKSH_CCCMD)
-
-$(MKSH_OBJDIR)/tree.o: $(MKSH_SUBDIR)/tree.c
-	$(MKSH_CCCMD)
-
-$(MKSH_OBJDIR)/var.o: $(MKSH_SUBDIR)/var.c
-	$(MKSH_CCCMD)
-
-$(MKSH_OBJDIR)/edit.o: $(MKSH_SUBDIR)/edit.c
-	$(MKSH_CCCMD)
-
-$(MKSH_OBJDIR)/strlcpy.o: $(MKSH_SUBDIR)/strlcpy.c
-	$(MKSH_CCCMD)
-
+$(MKSH_OBJDIR)/%.o: $(MKSH_SUBDIR)/%.c
+	$(CC) $(CFLAGS) -I$(MKSH_SUBDIR) $(MKSH_DEFINES) -c -o $@ $^
