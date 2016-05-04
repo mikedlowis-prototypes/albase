@@ -1372,9 +1372,11 @@ MUSL_OBJS = \
     $(MUSL_OBJDIR)/ldso/dlstart.o
 
 libc: $(MUSL_LIBC) $(MUSL_CRT_OBJS)
+	cp -R $(MUSL_SUBDIR)/include $(BUILDDIR)
 
 $(MUSL_LIBC): $(MUSL_OBJS)
-	$(ARCHIVE)
+	@echo $(AR) $(ARFLAGS) $@
+	@$(ARCHIVE)
 
 $(MUSL_OBJDIR)/%.o: $(MUSL_SUBDIR)/%.c
 	$(MUSL_COMPILE)

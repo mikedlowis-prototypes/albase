@@ -47,6 +47,7 @@ all: $(PHONY)
 clean:
 	@echo cleaning
 	@$(RM) $(BUILDDIR)/dummy $(ECLEAN)
+	@$(RM) -r $(BUILDDIR)/include
 
 # load dependency files if they exist
 -include $(DEPS)
@@ -58,6 +59,7 @@ clean:
 # Ensure The Build Dir Exists
 #------------------------------------------------------------------------------
 $(BUILDDIR)/dummy:
-	mkdir -p $(DIRS)
-	touch $@
+	@echo creating build dirs
+	@mkdir -p $(DIRS)
+	@touch $@
 -include $(BUILDDIR)/dummy
