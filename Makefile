@@ -29,7 +29,7 @@ OBJDIR   = $(BUILDDIR)/obj
 PHONY  =
 BINS   =
 ECLEAN =
-DIRS   = $(BUILDDIR) $(BINDIR) $(OBJDIR)
+DIRS   = $(BUILDDIR) $(BINDIR) $(LIBDIR) $(OBJDIR)
 
 #------------------------------------------------------------------------------
 # Build Rules
@@ -38,6 +38,7 @@ include source/Rules.mk
 include source/sh/Rules.mk
 include source/ubase/Rules.mk
 include source/sbase/Rules.mk
+include source/musl/Rules.mk
 
 .PHONY: all $(PHONY)
 
