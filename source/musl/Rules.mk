@@ -95,11 +95,11 @@ $(LIBDIR)/crtn.o: $(MUSL_SUBDIR)/crt/x86_64/crtn.s
 	$(MUSL_CC_CMD) -DCRT -c -o $@ $<
 
 $(BINDIR)/musl-gcc: $(LIBDIR)/libc.a $(LIBDIR)/musl-gcc.specs
-	printf '#!/bin/sh\nexec "$${REALGCC:-$(WRAPCC_GCC)}" "$$@" -specs "%s/musl-gcc.specs"\n' "$(LIBDIR)" > $@
+	printf '#!/bin/sh\nexec "$${REALGCC:-$(WRAPCC_GCC)}" "$$@" -specs "%s/musl-gcc.specs"\n' "$(PWD)/$(LIBDIR)" > $@
 	chmod +x $@
 
 $(LIBDIR)/musl-gcc.specs: $(MUSL_SUBDIR)/tools/musl-gcc.specs.sh
-	sh $< "$(BUILDDIR)/include" "$(LIBDIR)" "$(LDSO_PATHNAME)" > $@
+	sh $< "$(PWD)/$(BUILDDIR)/include" "$(PWD)/$(LIBDIR)" "$(LDSO_PATHNAME)" > $@
 
 # Objects with stack protector disabled
 $(MUSL_OBJDIR)/src/env/__init_tls.o: $(MUSL_SUBDIR)/src/env/__init_tls.c
