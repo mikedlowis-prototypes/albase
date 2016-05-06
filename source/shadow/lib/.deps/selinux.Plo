@@ -1,0 +1,3 @@
+selinux.lo: selinux.c ../config.h
+
+../config.h:

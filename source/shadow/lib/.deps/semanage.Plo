@@ -1,0 +1,3 @@
+semanage.lo: semanage.c ../config.h
+
+../config.h:

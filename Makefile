@@ -43,7 +43,7 @@ include source/Rules.mk
 include source/ubase/Rules.mk
 include source/sbase/Rules.mk
 include source/sh/Rules.mk
-#include source/shadow/Rules.mk
+include source/shadow/Rules.mk
 
 .PHONY: all $(PHONY)
 

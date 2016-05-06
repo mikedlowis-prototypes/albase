@@ -1,0 +1,3 @@
+audit_help.o: audit_help.c ../config.h
+
+../config.h:

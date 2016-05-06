@@ -1,0 +1,235 @@
+
+make[2]: Entering directory '/mnt/data/Source/personal/prototypes/albase/source/shadow/lib'
+gcc  -I. -I..     -g -O2 -MT commonio.lo -MD -MP -MF .deps/commonio.Tpo -c -o commonio.lo commonio.c
+libtool: compile:  /home/mdlowis/Source/personal/prototypes/albase/build/bin/musl-gcc -I. -I.. -g -O2 -MT commonio.lo -MD -MP -MF .deps/commonio.Tpo -c commonio.c -o commonio.o
+gcc  -I. -I..     -g -O2 -MT encrypt.lo -MD -MP -MF .deps/encrypt.Tpo -c -o encrypt.lo encrypt.c
+libtool: compile:  /home/mdlowis/Source/personal/prototypes/albase/build/bin/musl-gcc -I. -I.. -g -O2 -MT encrypt.lo -MD -MP -MF .deps/encrypt.Tpo -c encrypt.c -o encrypt.o
+gcc  -I. -I..     -g -O2 -MT fields.lo -MD -MP -MF .deps/fields.Tpo -c -o fields.lo fields.c
+libtool: compile:  /home/mdlowis/Source/personal/prototypes/albase/build/bin/musl-gcc -I. -I.. -g -O2 -MT fields.lo -MD -MP -MF .deps/fields.Tpo -c fields.c -o fields.o
+gcc  -I. -I..     -g -O2 -MT fputsx.lo -MD -MP -MF .deps/fputsx.Tpo -c -o fputsx.lo fputsx.c
+libtool: compile:  /home/mdlowis/Source/personal/prototypes/albase/build/bin/musl-gcc -I. -I.. -g -O2 -MT fputsx.lo -MD -MP -MF .deps/fputsx.Tpo -c fputsx.c -o fputsx.o
+gcc  -I. -I..     -g -O2 -MT getdef.lo -MD -MP -MF .deps/getdef.Tpo -c -o getdef.lo getdef.c
+libtool: compile:  /home/mdlowis/Source/personal/prototypes/albase/build/bin/musl-gcc -I. -I.. -g -O2 -MT getdef.lo -MD -MP -MF .deps/getdef.Tpo -c getdef.c -o getdef.o
+gcc  -I. -I..     -g -O2 -MT get_gid.lo -MD -MP -MF .deps/get_gid.Tpo -c -o get_gid.lo get_gid.c
+libtool: compile:  /home/mdlowis/Source/personal/prototypes/albase/build/bin/musl-gcc -I. -I.. -g -O2 -MT get_gid.lo -MD -MP -MF .deps/get_gid.Tpo -c get_gid.c -o get_gid.o
+gcc  -I. -I..     -g -O2 -MT getlong.lo -MD -MP -MF .deps/getlong.Tpo -c -o getlong.lo getlong.c
+libtool: compile:  /home/mdlowis/Source/personal/prototypes/albase/build/bin/musl-gcc -I. -I.. -g -O2 -MT getlong.lo -MD -MP -MF .deps/getlong.Tpo -c getlong.c -o getlong.o
+gcc  -I. -I..     -g -O2 -MT get_pid.lo -MD -MP -MF .deps/get_pid.Tpo -c -o get_pid.lo get_pid.c
+libtool: compile:  /home/mdlowis/Source/personal/prototypes/albase/build/bin/musl-gcc -I. -I.. -g -O2 -MT get_pid.lo -MD -MP -MF .deps/get_pid.Tpo -c get_pid.c -o get_pid.o
+gcc  -I. -I..     -g -O2 -MT get_uid.lo -MD -MP -MF .deps/get_uid.Tpo -c -o get_uid.lo get_uid.c
+libtool: compile:  /home/mdlowis/Source/personal/prototypes/albase/build/bin/musl-gcc -I. -I.. -g -O2 -MT get_uid.lo -MD -MP -MF .deps/get_uid.Tpo -c get_uid.c -o get_uid.o
+gcc  -I. -I..     -g -O2 -MT getulong.lo -MD -MP -MF .deps/getulong.Tpo -c -o getulong.lo getulong.c
+libtool: compile:  /home/mdlowis/Source/personal/prototypes/albase/build/bin/musl-gcc -I. -I.. -g -O2 -MT getulong.lo -MD -MP -MF .deps/getulong.Tpo -c getulong.c -o getulong.o
+gcc  -I. -I..     -g -O2 -MT groupio.lo -MD -MP -MF .deps/groupio.Tpo -c -o groupio.lo groupio.c
+libtool: compile:  /home/mdlowis/Source/personal/prototypes/albase/build/bin/musl-gcc -I. -I.. -g -O2 -MT groupio.lo -MD -MP -MF .deps/groupio.Tpo -c groupio.c -o groupio.o
+gcc  -I. -I..     -g -O2 -MT groupmem.lo -MD -MP -MF .deps/groupmem.Tpo -c -o groupmem.lo groupmem.c
+libtool: compile:  /home/mdlowis/Source/personal/prototypes/albase/build/bin/musl-gcc -I. -I.. -g -O2 -MT groupmem.lo -MD -MP -MF .deps/groupmem.Tpo -c groupmem.c -o groupmem.o
+gcc  -I. -I..     -g -O2 -MT gshadow.lo -MD -MP -MF .deps/gshadow.Tpo -c -o gshadow.lo gshadow.c
+libtool: compile:  /home/mdlowis/Source/personal/prototypes/albase/build/bin/musl-gcc -I. -I.. -g -O2 -MT gshadow.lo -MD -MP -MF .deps/gshadow.Tpo -c gshadow.c -o gshadow.o
+gcc  -I. -I..     -g -O2 -MT lockpw.lo -MD -MP -MF .deps/lockpw.Tpo -c -o lockpw.lo lockpw.c
+libtool: compile:  /home/mdlowis/Source/personal/prototypes/albase/build/bin/musl-gcc -I. -I.. -g -O2 -MT lockpw.lo -MD -MP -MF .deps/lockpw.Tpo -c lockpw.c -o lockpw.o
+gcc  -I. -I..     -g -O2 -MT nscd.lo -MD -MP -MF .deps/nscd.Tpo -c -o nscd.lo nscd.c
+libtool: compile:  /home/mdlowis/Source/personal/prototypes/albase/build/bin/musl-gcc -I. -I.. -g -O2 -MT nscd.lo -MD -MP -MF .deps/nscd.Tpo -c nscd.c -o nscd.o
+gcc  -I. -I..     -g -O2 -MT port.lo -MD -MP -MF .deps/port.Tpo -c -o port.lo port.c
+libtool: compile:  /home/mdlowis/Source/personal/prototypes/albase/build/bin/musl-gcc -I. -I.. -g -O2 -MT port.lo -MD -MP -MF .deps/port.Tpo -c port.c -o port.o
+gcc  -I. -I..     -g -O2 -MT pwauth.lo -MD -MP -MF .deps/pwauth.Tpo -c -o pwauth.lo pwauth.c
+libtool: compile:  /home/mdlowis/Source/personal/prototypes/albase/build/bin/musl-gcc -I. -I.. -g -O2 -MT pwauth.lo -MD -MP -MF .deps/pwauth.Tpo -c pwauth.c -o pwauth.o
+gcc  -I. -I..     -g -O2 -MT pwio.lo -MD -MP -MF .deps/pwio.Tpo -c -o pwio.lo pwio.c
+libtool: compile:  /home/mdlowis/Source/personal/prototypes/albase/build/bin/musl-gcc -I. -I.. -g -O2 -MT pwio.lo -MD -MP -MF .deps/pwio.Tpo -c pwio.c -o pwio.o
+gcc  -I. -I..     -g -O2 -MT pwmem.lo -MD -MP -MF .deps/pwmem.Tpo -c -o pwmem.lo pwmem.c
+libtool: compile:  /home/mdlowis/Source/personal/prototypes/albase/build/bin/musl-gcc -I. -I.. -g -O2 -MT pwmem.lo -MD -MP -MF .deps/pwmem.Tpo -c pwmem.c -o pwmem.o
+gcc  -I. -I..     -g -O2 -MT subordinateio.lo -MD -MP -MF .deps/subordinateio.Tpo -c -o subordinateio.lo subordinateio.c
+libtool: compile:  /home/mdlowis/Source/personal/prototypes/albase/build/bin/musl-gcc -I. -I.. -g -O2 -MT subordinateio.lo -MD -MP -MF .deps/subordinateio.Tpo -c subordinateio.c -o subordinateio.o
+gcc  -I. -I..     -g -O2 -MT selinux.lo -MD -MP -MF .deps/selinux.Tpo -c -o selinux.lo selinux.c
+libtool: compile:  /home/mdlowis/Source/personal/prototypes/albase/build/bin/musl-gcc -I. -I.. -g -O2 -MT selinux.lo -MD -MP -MF .deps/selinux.Tpo -c selinux.c -o selinux.o
+gcc  -I. -I..     -g -O2 -MT semanage.lo -MD -MP -MF .deps/semanage.Tpo -c -o semanage.lo semanage.c
+libtool: compile:  /home/mdlowis/Source/personal/prototypes/albase/build/bin/musl-gcc -I. -I.. -g -O2 -MT semanage.lo -MD -MP -MF .deps/semanage.Tpo -c semanage.c -o semanage.o
+gcc  -I. -I..     -g -O2 -MT sgetgrent.lo -MD -MP -MF .deps/sgetgrent.Tpo -c -o sgetgrent.lo sgetgrent.c
+libtool: compile:  /home/mdlowis/Source/personal/prototypes/albase/build/bin/musl-gcc -I. -I.. -g -O2 -MT sgetgrent.lo -MD -MP -MF .deps/sgetgrent.Tpo -c sgetgrent.c -o sgetgrent.o
+gcc  -I. -I..     -g -O2 -MT sgetpwent.lo -MD -MP -MF .deps/sgetpwent.Tpo -c -o sgetpwent.lo sgetpwent.c
+libtool: compile:  /home/mdlowis/Source/personal/prototypes/albase/build/bin/musl-gcc -I. -I.. -g -O2 -MT sgetpwent.lo -MD -MP -MF .deps/sgetpwent.Tpo -c sgetpwent.c -o sgetpwent.o
+gcc  -I. -I..     -g -O2 -MT sgetspent.lo -MD -MP -MF .deps/sgetspent.Tpo -c -o sgetspent.lo sgetspent.c
+libtool: compile:  /home/mdlowis/Source/personal/prototypes/albase/build/bin/musl-gcc -I. -I.. -g -O2 -MT sgetspent.lo -MD -MP -MF .deps/sgetspent.Tpo -c sgetspent.c -o sgetspent.o
+gcc  -I. -I..     -g -O2 -MT sgroupio.lo -MD -MP -MF .deps/sgroupio.Tpo -c -o sgroupio.lo sgroupio.c
+libtool: compile:  /home/mdlowis/Source/personal/prototypes/albase/build/bin/musl-gcc -I. -I.. -g -O2 -MT sgroupio.lo -MD -MP -MF .deps/sgroupio.Tpo -c sgroupio.c -o sgroupio.o
+gcc  -I. -I..     -g -O2 -MT shadow.lo -MD -MP -MF .deps/shadow.Tpo -c -o shadow.lo shadow.c
+libtool: compile:  /home/mdlowis/Source/personal/prototypes/albase/build/bin/musl-gcc -I. -I.. -g -O2 -MT shadow.lo -MD -MP -MF .deps/shadow.Tpo -c shadow.c -o shadow.o
+gcc  -I. -I..     -g -O2 -MT shadowio.lo -MD -MP -MF .deps/shadowio.Tpo -c -o shadowio.lo shadowio.c
+libtool: compile:  /home/mdlowis/Source/personal/prototypes/albase/build/bin/musl-gcc -I. -I.. -g -O2 -MT shadowio.lo -MD -MP -MF .deps/shadowio.Tpo -c shadowio.c -o shadowio.o
+gcc  -I. -I..     -g -O2 -MT shadowmem.lo -MD -MP -MF .deps/shadowmem.Tpo -c -o shadowmem.lo shadowmem.c
+libtool: compile:  /home/mdlowis/Source/personal/prototypes/albase/build/bin/musl-gcc -I. -I.. -g -O2 -MT shadowmem.lo -MD -MP -MF .deps/shadowmem.Tpo -c shadowmem.c -o shadowmem.o
+gcc  -I. -I..     -g -O2 -MT spawn.lo -MD -MP -MF .deps/spawn.Tpo -c -o spawn.lo spawn.c
+libtool: compile:  /home/mdlowis/Source/personal/prototypes/albase/build/bin/musl-gcc -I. -I.. -g -O2 -MT spawn.lo -MD -MP -MF .deps/spawn.Tpo -c spawn.c -o spawn.o
+gcc  -I. -I..     -g -O2 -MT utent.lo -MD -MP -MF .deps/utent.Tpo -c -o utent.lo utent.c
+libtool: compile:  /home/mdlowis/Source/personal/prototypes/albase/build/bin/musl-gcc -I. -I.. -g -O2 -MT utent.lo -MD -MP -MF .deps/utent.Tpo -c utent.c -o utent.o
+gcc  -g -O2 -version-info 0:0:0  -o libshadow.la  commonio.lo encrypt.lo fields.lo fputsx.lo getdef.lo get_gid.lo getlong.lo get_pid.lo get_uid.lo getulong.lo groupio.lo groupmem.lo gshadow.lo lockpw.lo nscd.lo port.lo pwauth.lo pwio.lo pwmem.lo subordinateio.lo selinux.lo semanage.lo sgetgrent.lo sgetpwent.lo sgetspent.lo sgroupio.lo shadow.lo shadowio.lo shadowmem.lo spawn.lo utent.lo
+libtool: link: warning: `-version-info/-version-number' is ignored for convenience libraries
+libtool: link: ar cru .libs/libshadow.a  commonio.o encrypt.o fields.o fputsx.o getdef.o get_gid.o getlong.o get_pid.o get_uid.o getulong.o groupio.o groupmem.o gshadow.o lockpw.o nscd.o port.o pwauth.o pwio.o pwmem.o subordinateio.o selinux.o semanage.o sgetgrent.o sgetpwent.o sgetspent.o sgroupio.o shadow.o shadowio.o shadowmem.o spawn.o utent.o
+libtool: link: ranlib .libs/libshadow.a
+libtool: link: ( cd ".libs" && rm -f "libshadow.la" && ln -s "../libshadow.la" "libshadow.la" )
+
+make[2]: Entering directory '/mnt/data/Source/personal/prototypes/albase/source/shadow/src'
+gcc -DHAVE_CONFIG_H -I. -I.. -I../lib -I../libmisc -DLOCALEDIR=\"/usr/share/locale\"   -g -O2 -MT groups.o -MD -MP -MF .deps/groups.Tpo -c -o groups.o groups.c
+mv -f .deps/groups.Tpo .deps/groups.Po
+gcc  -g -O2   -o groups groups.o   ../libmisc/libmisc.a ../lib/libshadow.la
+libtool: link: /home/mdlowis/Source/personal/prototypes/albase/build/bin/musl-gcc -g -O2 -o groups groups.o  ../libmisc/libmisc.a ../lib/.libs/libshadow.a
+gcc -DHAVE_CONFIG_H -I. -I.. -I../lib -I../libmisc -DLOCALEDIR=\"/usr/share/locale\"   -g -O2 -MT login.o -MD -MP -MF .deps/login.Tpo -c -o login.o login.c
+login.c: In function ‘check_nologin’:
+login.c:242:8: warning: assignment discards ‘const’ qualifier from pointer target type
+  fname = getdef_str ("NOLOGINS_FILE");
+        ^
+login.c: In function ‘init_env’:
+login.c:392:6: warning: assignment discards ‘const’ qualifier from pointer target type
+   cp = getdef_str ("ENV_TZ");
+      ^
+login.c:408:6: warning: assignment discards ‘const’ qualifier from pointer target type
+   cp = getdef_str ("ENV_HZ");
+      ^
+mv -f .deps/login.Tpo .deps/login.Po
+gcc -DHAVE_CONFIG_H -I. -I.. -I../lib -I../libmisc -DLOCALEDIR=\"/usr/share/locale\"   -g -O2 -MT login_nopam.o -MD -MP -MF .deps/login_nopam.Tpo -c -o login_nopam.o login_nopam.c
+mv -f .deps/login_nopam.Tpo .deps/login_nopam.Po
+gcc  -g -O2   -o login login.o login_nopam.o   ../libmisc/libmisc.a ../lib/libshadow.la   -lcrypt
+libtool: link: /home/mdlowis/Source/personal/prototypes/albase/build/bin/musl-gcc -g -O2 -o login login.o login_nopam.o  ../libmisc/libmisc.a ../lib/.libs/libshadow.a -lcrypt
+gcc -DHAVE_CONFIG_H -I. -I.. -I../lib -I../libmisc -DLOCALEDIR=\"/usr/share/locale\"   -g -O2 -MT su.o -MD -MP -MF .deps/su.Tpo -c -o su.o su.c
+su.c: In function ‘main’:
+su.c:1159:12: warning: assignment discards ‘const’ qualifier from pointer target type
+   argv[-1] = cp;
+            ^
+mv -f .deps/su.Tpo .deps/su.Po
+gcc -DHAVE_CONFIG_H -I. -I.. -I../lib -I../libmisc -DLOCALEDIR=\"/usr/share/locale\"   -g -O2 -MT suauth.o -MD -MP -MF .deps/suauth.Tpo -c -o suauth.o suauth.c
+mv -f .deps/suauth.Tpo .deps/suauth.Po
+gcc  -g -O2   -o su su.o suauth.o   ../libmisc/libmisc.a ../lib/libshadow.la  -lcrypt
+libtool: link: /home/mdlowis/Source/personal/prototypes/albase/build/bin/musl-gcc -g -O2 -o su su.o suauth.o  ../libmisc/libmisc.a ../lib/.libs/libshadow.a -lcrypt
+gcc -DHAVE_CONFIG_H -I. -I.. -I../lib -I../libmisc -DLOCALEDIR=\"/usr/share/locale\"   -g -O2 -MT id.o -MD -MP -MF .deps/id.Tpo -c -o id.o id.c
+mv -f .deps/id.Tpo .deps/id.Po
+gcc  -g -O2   -o id id.o   ../libmisc/libmisc.a ../lib/libshadow.la
+libtool: link: /home/mdlowis/Source/personal/prototypes/albase/build/bin/musl-gcc -g -O2 -o id id.o  ../libmisc/libmisc.a ../lib/.libs/libshadow.a
+gcc -DHAVE_CONFIG_H -I. -I.. -I../lib -I../libmisc -DLOCALEDIR=\"/usr/share/locale\"   -g -O2 -MT sulogin.o -MD -MP -MF .deps/sulogin.Tpo -c -o sulogin.o sulogin.c
+mv -f .deps/sulogin.Tpo .deps/sulogin.Po
+gcc  -g -O2   -o sulogin sulogin.o   ../libmisc/libmisc.a ../lib/libshadow.la -lcrypt
+libtool: link: /home/mdlowis/Source/personal/prototypes/albase/build/bin/musl-gcc -g -O2 -o sulogin sulogin.o  ../libmisc/libmisc.a ../lib/.libs/libshadow.a -lcrypt
+gcc -DHAVE_CONFIG_H -I. -I.. -I../lib -I../libmisc -DLOCALEDIR=\"/usr/share/locale\"   -g -O2 -MT nologin.o -MD -MP -MF .deps/nologin.Tpo -c -o nologin.o nologin.c
+mv -f .deps/nologin.Tpo .deps/nologin.Po
+gcc  -g -O2   -o nologin nologin.o
+libtool: link: /home/mdlowis/Source/personal/prototypes/albase/build/bin/musl-gcc -g -O2 -o nologin nologin.o
+gcc -DHAVE_CONFIG_H -I. -I.. -I../lib -I../libmisc -DLOCALEDIR=\"/usr/share/locale\"   -g -O2 -MT faillog.o -MD -MP -MF .deps/faillog.Tpo -c -o faillog.o faillog.c
+mv -f .deps/faillog.Tpo .deps/faillog.Po
+gcc  -g -O2   -o faillog faillog.o   ../libmisc/libmisc.a ../lib/libshadow.la
+libtool: link: /home/mdlowis/Source/personal/prototypes/albase/build/bin/musl-gcc -g -O2 -o faillog faillog.o  ../libmisc/libmisc.a ../lib/.libs/libshadow.a
+gcc -DHAVE_CONFIG_H -I. -I.. -I../lib -I../libmisc -DLOCALEDIR=\"/usr/share/locale\"   -g -O2 -MT lastlog.o -MD -MP -MF .deps/lastlog.Tpo -c -o lastlog.o lastlog.c
+mv -f .deps/lastlog.Tpo .deps/lastlog.Po
+gcc  -g -O2   -o lastlog lastlog.o   ../libmisc/libmisc.a ../lib/libshadow.la
+libtool: link: /home/mdlowis/Source/personal/prototypes/albase/build/bin/musl-gcc -g -O2 -o lastlog lastlog.o  ../libmisc/libmisc.a ../lib/.libs/libshadow.a
+gcc -DHAVE_CONFIG_H -I. -I.. -I../lib -I../libmisc -DLOCALEDIR=\"/usr/share/locale\"   -g -O2 -MT chage.o -MD -MP -MF .deps/chage.Tpo -c -o chage.o chage.c
+mv -f .deps/chage.Tpo .deps/chage.Po
+gcc  -g -O2   -o chage chage.o   ../libmisc/libmisc.a ../lib/libshadow.la
+libtool: link: /home/mdlowis/Source/personal/prototypes/albase/build/bin/musl-gcc -g -O2 -o chage chage.o  ../libmisc/libmisc.a ../lib/.libs/libshadow.a
+gcc -DHAVE_CONFIG_H -I. -I.. -I../lib -I../libmisc -DLOCALEDIR=\"/usr/share/locale\"   -g -O2 -MT chfn.o -MD -MP -MF .deps/chfn.Tpo -c -o chfn.o chfn.c
+mv -f .deps/chfn.Tpo .deps/chfn.Po
+gcc  -g -O2   -o chfn chfn.o   ../libmisc/libmisc.a ../lib/libshadow.la   -lcrypt
+libtool: link: /home/mdlowis/Source/personal/prototypes/albase/build/bin/musl-gcc -g -O2 -o chfn chfn.o  ../libmisc/libmisc.a ../lib/.libs/libshadow.a -lcrypt
+gcc -DHAVE_CONFIG_H -I. -I.. -I../lib -I../libmisc -DLOCALEDIR=\"/usr/share/locale\"   -g -O2 -MT chsh.o -MD -MP -MF .deps/chsh.Tpo -c -o chsh.o chsh.c
+mv -f .deps/chsh.Tpo .deps/chsh.Po
+gcc  -g -O2   -o chsh chsh.o   ../libmisc/libmisc.a ../lib/libshadow.la   -lcrypt
+libtool: link: /home/mdlowis/Source/personal/prototypes/albase/build/bin/musl-gcc -g -O2 -o chsh chsh.o  ../libmisc/libmisc.a ../lib/.libs/libshadow.a -lcrypt
+gcc -DHAVE_CONFIG_H -I. -I.. -I../lib -I../libmisc -DLOCALEDIR=\"/usr/share/locale\"   -g -O2 -MT expiry.o -MD -MP -MF .deps/expiry.Tpo -c -o expiry.o expiry.c
+mv -f .deps/expiry.Tpo .deps/expiry.Po
+gcc  -g -O2   -o expiry expiry.o   ../libmisc/libmisc.a ../lib/libshadow.la
+libtool: link: /home/mdlowis/Source/personal/prototypes/albase/build/bin/musl-gcc -g -O2 -o expiry expiry.o  ../libmisc/libmisc.a ../lib/.libs/libshadow.a
+gcc -DHAVE_CONFIG_H -I. -I.. -I../lib -I../libmisc -DLOCALEDIR=\"/usr/share/locale\"   -g -O2 -MT gpasswd.o -MD -MP -MF .deps/gpasswd.Tpo -c -o gpasswd.o gpasswd.c
+mv -f .deps/gpasswd.Tpo .deps/gpasswd.Po
+gcc  -g -O2   -o gpasswd gpasswd.o   ../libmisc/libmisc.a ../lib/libshadow.la   -lcrypt
+libtool: link: /home/mdlowis/Source/personal/prototypes/albase/build/bin/musl-gcc -g -O2 -o gpasswd gpasswd.o  ../libmisc/libmisc.a ../lib/.libs/libshadow.a -lcrypt
+gcc -DHAVE_CONFIG_H -I. -I.. -I../lib -I../libmisc -DLOCALEDIR=\"/usr/share/locale\"   -g -O2 -MT newgrp.o -MD -MP -MF .deps/newgrp.Tpo -c -o newgrp.o newgrp.c
+newgrp.c: In function ‘main’:
+newgrp.c:779:5: warning: assignment discards ‘const’ qualifier from pointer target type
+  cp = Basename ((char *) prog);
+     ^
+mv -f .deps/newgrp.Tpo .deps/newgrp.Po
+gcc  -g -O2   -o newgrp newgrp.o   ../libmisc/libmisc.a ../lib/libshadow.la  -lcrypt
+libtool: link: /home/mdlowis/Source/personal/prototypes/albase/build/bin/musl-gcc -g -O2 -o newgrp newgrp.o  ../libmisc/libmisc.a ../lib/.libs/libshadow.a -lcrypt
+gcc -DHAVE_CONFIG_H -I. -I.. -I../lib -I../libmisc -DLOCALEDIR=\"/usr/share/locale\"   -g -O2 -MT passwd.o -MD -MP -MF .deps/passwd.Tpo -c -o passwd.o passwd.c
+mv -f .deps/passwd.Tpo .deps/passwd.Po
+gcc  -g -O2   -o passwd passwd.o   ../libmisc/libmisc.a ../lib/libshadow.la     -lcrypt
+libtool: link: /home/mdlowis/Source/personal/prototypes/albase/build/bin/musl-gcc -g -O2 -o passwd passwd.o  ../libmisc/libmisc.a ../lib/.libs/libshadow.a -lcrypt
+gcc -DHAVE_CONFIG_H -I. -I.. -I../lib -I../libmisc -DLOCALEDIR=\"/usr/share/locale\"   -g -O2 -MT newgidmap.o -MD -MP -MF .deps/newgidmap.Tpo -c -o newgidmap.o newgidmap.c
+mv -f .deps/newgidmap.Tpo .deps/newgidmap.Po
+gcc  -g -O2   -o newgidmap newgidmap.o   ../libmisc/libmisc.a ../lib/libshadow.la
+libtool: link: /home/mdlowis/Source/personal/prototypes/albase/build/bin/musl-gcc -g -O2 -o newgidmap newgidmap.o  ../libmisc/libmisc.a ../lib/.libs/libshadow.a
+gcc -DHAVE_CONFIG_H -I. -I.. -I../lib -I../libmisc -DLOCALEDIR=\"/usr/share/locale\"   -g -O2 -MT newuidmap.o -MD -MP -MF .deps/newuidmap.Tpo -c -o newuidmap.o newuidmap.c
+mv -f .deps/newuidmap.Tpo .deps/newuidmap.Po
+gcc  -g -O2   -o newuidmap newuidmap.o   ../libmisc/libmisc.a ../lib/libshadow.la
+libtool: link: /home/mdlowis/Source/personal/prototypes/albase/build/bin/musl-gcc -g -O2 -o newuidmap newuidmap.o  ../libmisc/libmisc.a ../lib/.libs/libshadow.a
+gcc -DHAVE_CONFIG_H -I. -I.. -I../lib -I../libmisc -DLOCALEDIR=\"/usr/share/locale\"   -g -O2 -MT chgpasswd.o -MD -MP -MF .deps/chgpasswd.Tpo -c -o chgpasswd.o chgpasswd.c
+mv -f .deps/chgpasswd.Tpo .deps/chgpasswd.Po
+gcc  -g -O2   -o chgpasswd chgpasswd.o   ../libmisc/libmisc.a ../lib/libshadow.la   -lcrypt
+libtool: link: /home/mdlowis/Source/personal/prototypes/albase/build/bin/musl-gcc -g -O2 -o chgpasswd chgpasswd.o  ../libmisc/libmisc.a ../lib/.libs/libshadow.a -lcrypt
+gcc -DHAVE_CONFIG_H -I. -I.. -I../lib -I../libmisc -DLOCALEDIR=\"/usr/share/locale\"   -g -O2 -MT chpasswd.o -MD -MP -MF .deps/chpasswd.Tpo -c -o chpasswd.o chpasswd.c
+mv -f .deps/chpasswd.Tpo .deps/chpasswd.Po
+gcc  -g -O2   -o chpasswd chpasswd.o   ../libmisc/libmisc.a ../lib/libshadow.la   -lcrypt
+libtool: link: /home/mdlowis/Source/personal/prototypes/albase/build/bin/musl-gcc -g -O2 -o chpasswd chpasswd.o  ../libmisc/libmisc.a ../lib/.libs/libshadow.a -lcrypt
+gcc -DHAVE_CONFIG_H -I. -I.. -I../lib -I../libmisc -DLOCALEDIR=\"/usr/share/locale\"   -g -O2 -MT groupadd.o -MD -MP -MF .deps/groupadd.Tpo -c -o groupadd.o groupadd.c
+mv -f .deps/groupadd.Tpo .deps/groupadd.Po
+gcc  -g -O2   -o groupadd groupadd.o   ../libmisc/libmisc.a ../lib/libshadow.la
+libtool: link: /home/mdlowis/Source/personal/prototypes/albase/build/bin/musl-gcc -g -O2 -o groupadd groupadd.o  ../libmisc/libmisc.a ../lib/.libs/libshadow.a
+gcc -DHAVE_CONFIG_H -I. -I.. -I../lib -I../libmisc -DLOCALEDIR=\"/usr/share/locale\"   -g -O2 -MT groupdel.o -MD -MP -MF .deps/groupdel.Tpo -c -o groupdel.o groupdel.c
+mv -f .deps/groupdel.Tpo .deps/groupdel.Po
+gcc  -g -O2   -o groupdel groupdel.o   ../libmisc/libmisc.a ../lib/libshadow.la
+libtool: link: /home/mdlowis/Source/personal/prototypes/albase/build/bin/musl-gcc -g -O2 -o groupdel groupdel.o  ../libmisc/libmisc.a ../lib/.libs/libshadow.a
+gcc -DHAVE_CONFIG_H -I. -I.. -I../lib -I../libmisc -DLOCALEDIR=\"/usr/share/locale\"   -g -O2 -MT groupmems.o -MD -MP -MF .deps/groupmems.Tpo -c -o groupmems.o groupmems.c
+mv -f .deps/groupmems.Tpo .deps/groupmems.Po
+gcc  -g -O2   -o groupmems groupmems.o   ../libmisc/libmisc.a ../lib/libshadow.la
+libtool: link: /home/mdlowis/Source/personal/prototypes/albase/build/bin/musl-gcc -g -O2 -o groupmems groupmems.o  ../libmisc/libmisc.a ../lib/.libs/libshadow.a
+gcc -DHAVE_CONFIG_H -I. -I.. -I../lib -I../libmisc -DLOCALEDIR=\"/usr/share/locale\"   -g -O2 -MT groupmod.o -MD -MP -MF .deps/groupmod.Tpo -c -o groupmod.o groupmod.c
+mv -f .deps/groupmod.Tpo .deps/groupmod.Po
+gcc  -g -O2   -o groupmod groupmod.o   ../libmisc/libmisc.a ../lib/libshadow.la
+libtool: link: /home/mdlowis/Source/personal/prototypes/albase/build/bin/musl-gcc -g -O2 -o groupmod groupmod.o  ../libmisc/libmisc.a ../lib/.libs/libshadow.a
+gcc -DHAVE_CONFIG_H -I. -I.. -I../lib -I../libmisc -DLOCALEDIR=\"/usr/share/locale\"   -g -O2 -MT grpck.o -MD -MP -MF .deps/grpck.Tpo -c -o grpck.o grpck.c
+mv -f .deps/grpck.Tpo .deps/grpck.Po
+gcc  -g -O2   -o grpck grpck.o   ../libmisc/libmisc.a ../lib/libshadow.la
+libtool: link: /home/mdlowis/Source/personal/prototypes/albase/build/bin/musl-gcc -g -O2 -o grpck grpck.o  ../libmisc/libmisc.a ../lib/.libs/libshadow.a
+gcc -DHAVE_CONFIG_H -I. -I.. -I../lib -I../libmisc -DLOCALEDIR=\"/usr/share/locale\"   -g -O2 -MT grpconv.o -MD -MP -MF .deps/grpconv.Tpo -c -o grpconv.o grpconv.c
+mv -f .deps/grpconv.Tpo .deps/grpconv.Po
+gcc  -g -O2   -o grpconv grpconv.o   ../libmisc/libmisc.a ../lib/libshadow.la
+libtool: link: /home/mdlowis/Source/personal/prototypes/albase/build/bin/musl-gcc -g -O2 -o grpconv grpconv.o  ../libmisc/libmisc.a ../lib/.libs/libshadow.a
+gcc -DHAVE_CONFIG_H -I. -I.. -I../lib -I../libmisc -DLOCALEDIR=\"/usr/share/locale\"   -g -O2 -MT grpunconv.o -MD -MP -MF .deps/grpunconv.Tpo -c -o grpunconv.o grpunconv.c
+mv -f .deps/grpunconv.Tpo .deps/grpunconv.Po
+gcc  -g -O2   -o grpunconv grpunconv.o   ../libmisc/libmisc.a ../lib/libshadow.la
+libtool: link: /home/mdlowis/Source/personal/prototypes/albase/build/bin/musl-gcc -g -O2 -o grpunconv grpunconv.o  ../libmisc/libmisc.a ../lib/.libs/libshadow.a
+gcc -DHAVE_CONFIG_H -I. -I.. -I../lib -I../libmisc -DLOCALEDIR=\"/usr/share/locale\"   -g -O2 -MT logoutd.o -MD -MP -MF .deps/logoutd.Tpo -c -o logoutd.o logoutd.c
+mv -f .deps/logoutd.Tpo .deps/logoutd.Po
+gcc  -g -O2   -o logoutd logoutd.o   ../libmisc/libmisc.a ../lib/libshadow.la
+libtool: link: /home/mdlowis/Source/personal/prototypes/albase/build/bin/musl-gcc -g -O2 -o logoutd logoutd.o  ../libmisc/libmisc.a ../lib/.libs/libshadow.a
+gcc -DHAVE_CONFIG_H -I. -I.. -I../lib -I../libmisc -DLOCALEDIR=\"/usr/share/locale\"   -g -O2 -MT newusers.o -MD -MP -MF .deps/newusers.Tpo -c -o newusers.o newusers.c
+mv -f .deps/newusers.Tpo .deps/newusers.Po
+gcc  -g -O2   -o newusers newusers.o   ../libmisc/libmisc.a ../lib/libshadow.la   -lcrypt
+libtool: link: /home/mdlowis/Source/personal/prototypes/albase/build/bin/musl-gcc -g -O2 -o newusers newusers.o  ../libmisc/libmisc.a ../lib/.libs/libshadow.a -lcrypt
+gcc -DHAVE_CONFIG_H -I. -I.. -I../lib -I../libmisc -DLOCALEDIR=\"/usr/share/locale\"   -g -O2 -MT pwck.o -MD -MP -MF .deps/pwck.Tpo -c -o pwck.o pwck.c
+mv -f .deps/pwck.Tpo .deps/pwck.Po
+gcc  -g -O2   -o pwck pwck.o   ../libmisc/libmisc.a ../lib/libshadow.la
+libtool: link: /home/mdlowis/Source/personal/prototypes/albase/build/bin/musl-gcc -g -O2 -o pwck pwck.o  ../libmisc/libmisc.a ../lib/.libs/libshadow.a
+gcc -DHAVE_CONFIG_H -I. -I.. -I../lib -I../libmisc -DLOCALEDIR=\"/usr/share/locale\"   -g -O2 -MT pwconv.o -MD -MP -MF .deps/pwconv.Tpo -c -o pwconv.o pwconv.c
+mv -f .deps/pwconv.Tpo .deps/pwconv.Po
+gcc  -g -O2   -o pwconv pwconv.o   ../libmisc/libmisc.a ../lib/libshadow.la
+libtool: link: /home/mdlowis/Source/personal/prototypes/albase/build/bin/musl-gcc -g -O2 -o pwconv pwconv.o  ../libmisc/libmisc.a ../lib/.libs/libshadow.a
+gcc -DHAVE_CONFIG_H -I. -I.. -I../lib -I../libmisc -DLOCALEDIR=\"/usr/share/locale\"   -g -O2 -MT pwunconv.o -MD -MP -MF .deps/pwunconv.Tpo -c -o pwunconv.o pwunconv.c
+mv -f .deps/pwunconv.Tpo .deps/pwunconv.Po
+gcc  -g -O2   -o pwunconv pwunconv.o   ../libmisc/libmisc.a ../lib/libshadow.la
+libtool: link: /home/mdlowis/Source/personal/prototypes/albase/build/bin/musl-gcc -g -O2 -o pwunconv pwunconv.o  ../libmisc/libmisc.a ../lib/.libs/libshadow.a
+gcc -DHAVE_CONFIG_H -I. -I.. -I../lib -I../libmisc -DLOCALEDIR=\"/usr/share/locale\"   -g -O2 -MT useradd.o -MD -MP -MF .deps/useradd.Tpo -c -o useradd.o useradd.c
+mv -f .deps/useradd.Tpo .deps/useradd.Po
+gcc  -g -O2   -o useradd useradd.o   ../libmisc/libmisc.a ../lib/libshadow.la
+libtool: link: /home/mdlowis/Source/personal/prototypes/albase/build/bin/musl-gcc -g -O2 -o useradd useradd.o  ../libmisc/libmisc.a ../lib/.libs/libshadow.a
+gcc -DHAVE_CONFIG_H -I. -I.. -I../lib -I../libmisc -DLOCALEDIR=\"/usr/share/locale\"   -g -O2 -MT userdel.o -MD -MP -MF .deps/userdel.Tpo -c -o userdel.o userdel.c
+mv -f .deps/userdel.Tpo .deps/userdel.Po
+gcc  -g -O2   -o userdel userdel.o   ../libmisc/libmisc.a ../lib/libshadow.la
+libtool: link: /home/mdlowis/Source/personal/prototypes/albase/build/bin/musl-gcc -g -O2 -o userdel userdel.o  ../libmisc/libmisc.a ../lib/.libs/libshadow.a
+gcc -DHAVE_CONFIG_H -I. -I.. -I../lib -I../libmisc -DLOCALEDIR=\"/usr/share/locale\"   -g -O2 -MT usermod.o -MD -MP -MF .deps/usermod.Tpo -c -o usermod.o usermod.c
+mv -f .deps/usermod.Tpo .deps/usermod.Po
+gcc  -g -O2   -o usermod usermod.o   ../libmisc/libmisc.a ../lib/libshadow.la
+libtool: link: /home/mdlowis/Source/personal/prototypes/albase/build/bin/musl-gcc -g -O2 -o usermod usermod.o  ../libmisc/libmisc.a ../lib/.libs/libshadow.a
+gcc -DHAVE_CONFIG_H -I. -I.. -I../lib -I../libmisc -DLOCALEDIR=\"/usr/share/locale\"   -g -O2 -MT vipw.o -MD -MP -MF .deps/vipw.Tpo -c -o vipw.o vipw.c
+mv -f .deps/vipw.Tpo .deps/vipw.Po
+gcc  -g -O2   -o vipw vipw.o   ../libmisc/libmisc.a ../lib/libshadow.la
+libtool: link: /home/mdlowis/Source/personal/prototypes/albase/build/bin/musl-gcc -g -O2 -o vipw vipw.o  ../libmisc/libmisc.a ../lib/.libs/libshadow.a
+make[2]: Leaving directory '/mnt/data/Source/personal/prototypes/albase/source/shadow/src'

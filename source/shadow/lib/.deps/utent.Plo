@@ -1,0 +1,3 @@
+utent.lo: utent.c ../config.h
+
+../config.h:

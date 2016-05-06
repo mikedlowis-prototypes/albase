@@ -1,0 +1,3 @@
+rlogin.o: rlogin.c ../config.h
+
+../config.h:

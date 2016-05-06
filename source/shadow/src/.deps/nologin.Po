@@ -1,0 +1,27 @@
+nologin.o: nologin.c ../config.h \
+ /mnt/data/Source/personal/prototypes/albase/build/include/stdio.h \
+ /mnt/data/Source/personal/prototypes/albase/build/include/features.h \
+ /mnt/data/Source/personal/prototypes/albase/build/include/bits/alltypes.h \
+ /mnt/data/Source/personal/prototypes/albase/build/include/stdlib.h \
+ /mnt/data/Source/personal/prototypes/albase/build/include/alloca.h \
+ /mnt/data/Source/personal/prototypes/albase/build/include/syslog.h \
+ /mnt/data/Source/personal/prototypes/albase/build/include/unistd.h \
+ /mnt/data/Source/personal/prototypes/albase/build/include/bits/posix.h
+
+../config.h:
+
+/mnt/data/Source/personal/prototypes/albase/build/include/stdio.h:
+
+/mnt/data/Source/personal/prototypes/albase/build/include/features.h:
+
+/mnt/data/Source/personal/prototypes/albase/build/include/bits/alltypes.h:
+
+/mnt/data/Source/personal/prototypes/albase/build/include/stdlib.h:
+
+/mnt/data/Source/personal/prototypes/albase/build/include/alloca.h:
+
+/mnt/data/Source/personal/prototypes/albase/build/include/syslog.h:
+
+/mnt/data/Source/personal/prototypes/albase/build/include/unistd.h:
+
+/mnt/data/Source/personal/prototypes/albase/build/include/bits/posix.h:

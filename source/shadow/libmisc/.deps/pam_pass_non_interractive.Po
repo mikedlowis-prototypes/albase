@@ -1,0 +1,3 @@
+pam_pass_non_interractive.o: pam_pass_non_interractive.c ../config.h
+
+../config.h:

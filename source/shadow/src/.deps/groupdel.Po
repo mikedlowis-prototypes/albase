@@ -1,0 +1,155 @@
+groupdel.o: groupdel.c ../config.h \
+ /mnt/data/Source/personal/prototypes/albase/build/include/ctype.h \
+ /mnt/data/Source/personal/prototypes/albase/build/include/features.h \
+ /mnt/data/Source/personal/prototypes/albase/build/include/bits/alltypes.h \
+ /mnt/data/Source/personal/prototypes/albase/build/include/fcntl.h \
+ /mnt/data/Source/personal/prototypes/albase/build/include/bits/fcntl.h \
+ /mnt/data/Source/personal/prototypes/albase/build/include/grp.h \
+ /mnt/data/Source/personal/prototypes/albase/build/include/pwd.h \
+ /mnt/data/Source/personal/prototypes/albase/build/include/stdio.h \
+ /mnt/data/Source/personal/prototypes/albase/build/include/sys/types.h \
+ /mnt/data/Source/personal/prototypes/albase/build/include/endian.h \
+ /mnt/data/Source/personal/prototypes/albase/build/include/stdint.h \
+ /mnt/data/Source/personal/prototypes/albase/build/include/bits/stdint.h \
+ /mnt/data/Source/personal/prototypes/albase/build/include/sys/select.h \
+ /mnt/data/Source/personal/prototypes/albase/build/include/sys/sysmacros.h \
+ /mnt/data/Source/personal/prototypes/albase/build/include/getopt.h \
+ ../lib/defines.h \
+ /mnt/data/Source/personal/prototypes/albase/build/include/stdbool.h \
+ /mnt/data/Source/personal/prototypes/albase/build/include/locale.h \
+ /mnt/data/Source/personal/prototypes/albase/build/include/stdlib.h \
+ /mnt/data/Source/personal/prototypes/albase/build/include/alloca.h \
+ /mnt/data/Source/personal/prototypes/albase/build/include/string.h \
+ /mnt/data/Source/personal/prototypes/albase/build/include/strings.h \
+ /mnt/data/Source/personal/prototypes/albase/build/include/errno.h \
+ /mnt/data/Source/personal/prototypes/albase/build/include/bits/errno.h \
+ /mnt/data/Source/personal/prototypes/albase/build/include/sys/stat.h \
+ /mnt/data/Source/personal/prototypes/albase/build/include/bits/stat.h \
+ /mnt/data/Source/personal/prototypes/albase/build/include/sys/wait.h \
+ /mnt/data/Source/personal/prototypes/albase/build/include/signal.h \
+ /mnt/data/Source/personal/prototypes/albase/build/include/bits/signal.h \
+ /mnt/data/Source/personal/prototypes/albase/build/include/sys/resource.h \
+ /mnt/data/Source/personal/prototypes/albase/build/include/sys/time.h \
+ /mnt/data/Source/personal/prototypes/albase/build/include/bits/resource.h \
+ /mnt/data/Source/personal/prototypes/albase/build/include/unistd.h \
+ /mnt/data/Source/personal/prototypes/albase/build/include/bits/posix.h \
+ /mnt/data/Source/personal/prototypes/albase/build/include/time.h \
+ /mnt/data/Source/personal/prototypes/albase/build/include/dirent.h \
+ /mnt/data/Source/personal/prototypes/albase/build/include/shadow.h \
+ ../lib/gshadow_.h \
+ /mnt/data/Source/personal/prototypes/albase/build/include/limits.h \
+ /mnt/data/Source/personal/prototypes/albase/build/include/bits/limits.h \
+ /mnt/data/Source/personal/prototypes/albase/build/include/syslog.h \
+ /mnt/data/Source/personal/prototypes/albase/build/include/termios.h \
+ /mnt/data/Source/personal/prototypes/albase/build/include/bits/termios.h \
+ /mnt/data/Source/personal/prototypes/albase/build/include/utmpx.h \
+ ../lib/groupio.h ../lib/nscd.h ../lib/prototypes.h \
+ /mnt/data/Source/personal/prototypes/albase/build/include/utmp.h \
+ /mnt/data/Source/personal/prototypes/albase/build/include/lastlog.h \
+ ../lib/defines.h ../lib/commonio.h ../lib/sgroupio.h
+
+../config.h:
+
+/mnt/data/Source/personal/prototypes/albase/build/include/ctype.h:
+
+/mnt/data/Source/personal/prototypes/albase/build/include/features.h:
+
+/mnt/data/Source/personal/prototypes/albase/build/include/bits/alltypes.h:
+
+/mnt/data/Source/personal/prototypes/albase/build/include/fcntl.h:
+
+/mnt/data/Source/personal/prototypes/albase/build/include/bits/fcntl.h:
+
+/mnt/data/Source/personal/prototypes/albase/build/include/grp.h:
+
+/mnt/data/Source/personal/prototypes/albase/build/include/pwd.h:
+
+/mnt/data/Source/personal/prototypes/albase/build/include/stdio.h:
+
+/mnt/data/Source/personal/prototypes/albase/build/include/sys/types.h:
+
+/mnt/data/Source/personal/prototypes/albase/build/include/endian.h:
+
+/mnt/data/Source/personal/prototypes/albase/build/include/stdint.h:
+
+/mnt/data/Source/personal/prototypes/albase/build/include/bits/stdint.h:
+
+/mnt/data/Source/personal/prototypes/albase/build/include/sys/select.h:
+
+/mnt/data/Source/personal/prototypes/albase/build/include/sys/sysmacros.h:
+
+/mnt/data/Source/personal/prototypes/albase/build/include/getopt.h:
+
+../lib/defines.h:
+
+/mnt/data/Source/personal/prototypes/albase/build/include/stdbool.h:
+
+/mnt/data/Source/personal/prototypes/albase/build/include/locale.h:
+
+/mnt/data/Source/personal/prototypes/albase/build/include/stdlib.h:
+
+/mnt/data/Source/personal/prototypes/albase/build/include/alloca.h:
+
+/mnt/data/Source/personal/prototypes/albase/build/include/string.h:
+
+/mnt/data/Source/personal/prototypes/albase/build/include/strings.h:
+
+/mnt/data/Source/personal/prototypes/albase/build/include/errno.h:
+
+/mnt/data/Source/personal/prototypes/albase/build/include/bits/errno.h:
+
+/mnt/data/Source/personal/prototypes/albase/build/include/sys/stat.h:
+
+/mnt/data/Source/personal/prototypes/albase/build/include/bits/stat.h:
+
+/mnt/data/Source/personal/prototypes/albase/build/include/sys/wait.h:
+
+/mnt/data/Source/personal/prototypes/albase/build/include/signal.h:
+
+/mnt/data/Source/personal/prototypes/albase/build/include/bits/signal.h:
+
+/mnt/data/Source/personal/prototypes/albase/build/include/sys/resource.h:
+
+/mnt/data/Source/personal/prototypes/albase/build/include/sys/time.h:
+
+/mnt/data/Source/personal/prototypes/albase/build/include/bits/resource.h:
+
+/mnt/data/Source/personal/prototypes/albase/build/include/unistd.h:
+
+/mnt/data/Source/personal/prototypes/albase/build/include/bits/posix.h:
+
+/mnt/data/Source/personal/prototypes/albase/build/include/time.h:
+
+/mnt/data/Source/personal/prototypes/albase/build/include/dirent.h:
+
+/mnt/data/Source/personal/prototypes/albase/build/include/shadow.h:
+
+../lib/gshadow_.h:
+
+/mnt/data/Source/personal/prototypes/albase/build/include/limits.h:
+
+/mnt/data/Source/personal/prototypes/albase/build/include/bits/limits.h:
+
+/mnt/data/Source/personal/prototypes/albase/build/include/syslog.h:
+
+/mnt/data/Source/personal/prototypes/albase/build/include/termios.h:
+
+/mnt/data/Source/personal/prototypes/albase/build/include/bits/termios.h:
+
+/mnt/data/Source/personal/prototypes/albase/build/include/utmpx.h:
+
+../lib/groupio.h:
+
+../lib/nscd.h:
+
+../lib/prototypes.h:
+
+/mnt/data/Source/personal/prototypes/albase/build/include/utmp.h:
+
+/mnt/data/Source/personal/prototypes/albase/build/include/lastlog.h:
+
+../lib/defines.h:
+
+../lib/commonio.h:
+
+../lib/sgroupio.h:

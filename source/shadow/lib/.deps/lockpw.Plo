@@ -1,0 +1,3 @@
+lockpw.lo: lockpw.c ../config.h
+
+../config.h:
