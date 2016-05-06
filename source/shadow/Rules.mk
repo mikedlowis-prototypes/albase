@@ -13,7 +13,7 @@ SHADOW_SUBDIR       = source/shadow
 SHADOW_OBJDIR       = $(OBJDIR)/shadow
 
 # libshadow.a
-SHADOW_LIB      = $(LIBDIR)/libshadow.a
+SHADOW_LIB      = $(SHADOW_OBJDIR)/libshadow.a
 SHADOW_LIB_SRCS = $(wildcard $(SHADOW_SUBDIR)/lib/*.c)
 SHADOW_LIB_OBJS = $(patsubst $(SHADOW_SUBDIR)/%,$(SHADOW_OBJDIR)/%.o,$(basename $(SHADOW_LIB_SRCS)))
 
@@ -35,7 +35,7 @@ $(SHADOW_LIBMISC): $(SHADOW_LIBMISC_OBJS)
 $(BINDIR)/%: $(SHADOW_SUBDIR)/src/%.c $(SHADOW_LIBMISC) $(SHADOW_LIB)
 	$(CC) -I$(SHADOW_SUBDIR) -I$(SHADOW_SUBDIR)/libmisc -I$(SHADOW_SUBDIR)/lib -DHAVE_CONFIG_H -O2 -o $@ $^
 
-$(SHADOW_LIBMISC): $(SHADOW_LIBMISC_OBJS)
+$(SHADOW_OBJDIR)/%.a:
 	$(AR) $(ARFLAGS) $@ $^
 
 $(SHADOW_OBJDIR)/%.o: $(SHADOW_SUBDIR)/%.c $(CC)
