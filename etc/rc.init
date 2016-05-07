@@ -1,0 +1,13 @@
+#!/bin/sh
+mount -t proc proc /proc
+mount -t sysfs sys /sys
+mount -t tmpfs tmpfs /tmp
+mount devtmpfs /dev
+mkdir /dev/pts
+mkdir /dev/shm
+dmesg -n 1
+clear
+getty /dev/tty1 &
+getty /dev/tty2 &
+getty /dev/tty3 &
+#exec /bin/sh
