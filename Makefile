@@ -33,7 +33,15 @@ OBJDIR   = $(BUILDDIR)/obj
 PHONY  =
 BINS   =
 ECLEAN =
-DIRS   = $(BUILDDIR) $(BINDIR) $(LIBDIR) $(OBJDIR)
+DIRS   = $(BUILDDIR) $(BINDIR) $(LIBDIR) $(OBJDIR) \
+         $(BUILDDIR)/boot      \
+         $(BUILDDIR)/dev       \
+         $(BUILDDIR)/etc       \
+         $(BUILDDIR)/home/root \
+         $(BUILDDIR)/proc      \
+         $(BUILDDIR)/sys       \
+         $(BUILDDIR)/tmp       \
+         $(BUILDDIR)/var
 
 #------------------------------------------------------------------------------
 # Build Rules
@@ -44,10 +52,17 @@ include source/ubase/Rules.mk
 include source/sbase/Rules.mk
 include source/sh/Rules.mk
 include source/shadow/Rules.mk
+include source/smdev/Rules.mk
+#include source/iproute2/Rules.mk
 
-.PHONY: all $(PHONY)
+.PHONY: all headers $(PHONY)
 
 all: $(PHONY)
+	#mkdir -p $(BUILDDIR)/var/run
+	#touch $(BUILDDIR)/var/run/utmp
+
+headers: libc-headers
+	@make -C source/kernel INSTALL_HDR_PATH="$(PWD)/$(BUILDDIR)" headers_install
 
 clean:
 	@echo cleaning

@@ -58,6 +58,8 @@ MUSL_CC_CMD = $(REALCC) $(MUSL_FLAGS)
 
 libc: $(MUSL_LIBS) $(MUSL_CRT_OBJS) $(MUSL_EXTRAS) libc-headers
 
+$(CC): libc
+
 libc-headers:
 	cp -R $(MUSL_SUBDIR)/include/ $(BUILDDIR)/
 	cp -R $(MUSL_SUBDIR)/arch/$(ARCH)/bits/ $(BUILDDIR)/include/
