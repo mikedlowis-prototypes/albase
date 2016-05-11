@@ -53,6 +53,7 @@ include source/sbase/Rules.mk
 include source/sh/Rules.mk
 include source/shadow/Rules.mk
 include source/smdev/Rules.mk
+include source/sdhcp/Rules.mk
 include source/iproute2/Rules.mk
 
 .PHONY: all headers $(PHONY)
