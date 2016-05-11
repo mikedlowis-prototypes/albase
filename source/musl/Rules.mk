@@ -56,14 +56,15 @@ MUSL_FTWO   = -Os -pipe -fomit-frame-pointer -fno-unwind-tables -fno-asynchronou
 MUSL_FLAGS  = $(MUSL_FONE) $(MUSL_INCS) $(MUSL_FTWO)
 MUSL_CC_CMD = $(REALCC) $(MUSL_FLAGS)
 
-libc: $(MUSL_LIBS) $(MUSL_CRT_OBJS) $(MUSL_EXTRAS) libc-headers
+libc: $(CC) $(MUSL_LIBS) $(MUSL_CRT_OBJS) $(MUSL_EXTRAS)
 
-$(CC): libc
+$(CC): $(BUILDDIR)/include/stdio.h
 
-libc-headers:
+$(BUILDDIR)/include/stdio.h:
 	cp -R $(MUSL_SUBDIR)/include/ $(BUILDDIR)/
 	cp -R $(MUSL_SUBDIR)/arch/$(ARCH)/bits/ $(BUILDDIR)/include/
 	cp -R $(MUSL_SUBDIR)/arch/generic/bits/ $(BUILDDIR)/include/
+	make -C source/kernel INSTALL_HDR_PATH="$(PWD)/$(BUILDDIR)" headers_install
 
 $(LIBDIR)/libc.a: $(filter $(MUSL_OBJDIR)/src/%,$(MUSL_OBJS))
 
