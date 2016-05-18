@@ -56,15 +56,20 @@ include source/smdev/Rules.mk
 include source/sdhcp/Rules.mk
 include source/iproute2/Rules.mk
 include source/curl/Rules.mk
+include etc/Rules.mk
 
 .PHONY: all headers $(PHONY)
 
 all: $(PHONY)
 
+stage1: all
+	cd $(BUILDDIR) && tar -cJf ../stage1.tar.xz . --exclude obj --exclude dummy
+
 clean:
 	@echo cleaning
 	@$(RM) $(BUILDDIR)/dummy $(ECLEAN)
 	@$(RM) -r $(BUILDDIR)/include
+	@$(RM) stage1.tar.xz
 
 # load dependency files if they exist
 -include $(DEPS)
