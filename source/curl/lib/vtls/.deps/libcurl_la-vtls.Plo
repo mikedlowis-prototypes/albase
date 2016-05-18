@@ -1,0 +1,269 @@
+vtls/libcurl_la-vtls.lo: vtls/vtls.c ../lib/curl_setup.h \
+ ../lib/curl_config.h ../include/curl/curlbuild.h \
+ /mnt/data/Source/personal/prototypes/albase/build/include/sys/types.h \
+ /mnt/data/Source/personal/prototypes/albase/build/include/features.h \
+ /mnt/data/Source/personal/prototypes/albase/build/include/bits/alltypes.h \
+ /mnt/data/Source/personal/prototypes/albase/build/include/endian.h \
+ /mnt/data/Source/personal/prototypes/albase/build/include/stdint.h \
+ /mnt/data/Source/personal/prototypes/albase/build/include/bits/stdint.h \
+ /mnt/data/Source/personal/prototypes/albase/build/include/sys/select.h \
+ /mnt/data/Source/personal/prototypes/albase/build/include/sys/sysmacros.h \
+ /mnt/data/Source/personal/prototypes/albase/build/include/sys/socket.h \
+ /mnt/data/Source/personal/prototypes/albase/build/include/bits/socket.h \
+ ../include/curl/curlrules.h \
+ /mnt/data/Source/personal/prototypes/albase/build/include/stdio.h \
+ /mnt/data/Source/personal/prototypes/albase/build/include/assert.h \
+ ../lib/curl_setup_once.h \
+ /mnt/data/Source/personal/prototypes/albase/build/include/stdlib.h \
+ /mnt/data/Source/personal/prototypes/albase/build/include/alloca.h \
+ /mnt/data/Source/personal/prototypes/albase/build/include/string.h \
+ /mnt/data/Source/personal/prototypes/albase/build/include/strings.h \
+ /mnt/data/Source/personal/prototypes/albase/build/include/stdarg.h \
+ /mnt/data/Source/personal/prototypes/albase/build/include/ctype.h \
+ /mnt/data/Source/personal/prototypes/albase/build/include/errno.h \
+ /mnt/data/Source/personal/prototypes/albase/build/include/bits/errno.h \
+ /mnt/data/Source/personal/prototypes/albase/build/include/sys/stat.h \
+ /mnt/data/Source/personal/prototypes/albase/build/include/bits/stat.h \
+ /mnt/data/Source/personal/prototypes/albase/build/include/sys/time.h \
+ /mnt/data/Source/personal/prototypes/albase/build/include/time.h \
+ /mnt/data/Source/personal/prototypes/albase/build/include/stdbool.h \
+ /mnt/data/Source/personal/prototypes/albase/build/include/unistd.h \
+ /mnt/data/Source/personal/prototypes/albase/build/include/bits/posix.h \
+ /mnt/data/Source/personal/prototypes/albase/build/include/fcntl.h \
+ /mnt/data/Source/personal/prototypes/albase/build/include/bits/fcntl.h \
+ ../lib/urldata.h ../lib/curl_setup.h ../lib/cookie.h \
+ ../include/curl/curl.h ../include/curl/curlver.h \
+ ../include/curl/curlbuild.h ../include/curl/curlrules.h \
+ /mnt/data/Source/personal/prototypes/albase/build/include/limits.h \
+ /mnt/data/Source/personal/prototypes/albase/build/include/bits/limits.h \
+ ../include/curl/easy.h ../include/curl/multi.h ../include/curl/curl.h \
+ ../include/curl/typecheck-gcc.h ../lib/formdata.h \
+ /mnt/data/Source/personal/prototypes/albase/build/include/netinet/in.h \
+ /mnt/data/Source/personal/prototypes/albase/build/include/inttypes.h \
+ ../lib/timeval.h ../lib/http_chunks.h ../lib/hostip.h ../lib/hash.h \
+ /mnt/data/Source/personal/prototypes/albase/build/include/stddef.h \
+ ../lib/llist.h ../lib/curl_addrinfo.h \
+ /mnt/data/Source/personal/prototypes/albase/build/include/netdb.h \
+ /mnt/data/Source/personal/prototypes/albase/build/include/arpa/inet.h \
+ ../lib/asyn.h \
+ /mnt/data/Source/personal/prototypes/albase/build/include/setjmp.h \
+ /mnt/data/Source/personal/prototypes/albase/build/include/bits/setjmp.h \
+ ../lib/splay.h ../lib/imap.h ../lib/pingpong.h ../lib/curl_sasl.h \
+ ../lib/pop3.h ../lib/smtp.h ../lib/ftp.h ../lib/file.h ../lib/ssh.h \
+ ../lib/http.h ../lib/rtsp.h ../lib/smb.h ../lib/wildcard.h \
+ ../lib/multihandle.h ../lib/conncache.h vtls/vtls.h vtls/openssl.h \
+ vtls/gtls.h vtls/nssg.h vtls/gskit.h vtls/polarssl.h vtls/axtls.h \
+ vtls/cyassl.h vtls/schannel.h vtls/darwinssl.h vtls/mbedtls.h \
+ ../lib/slist.h ../lib/sendf.h ../lib/rawstr.h ../lib/url.h \
+ ../lib/progress.h ../lib/share.h ../lib/urldata.h ../lib/timeval.h \
+ ../lib/curl_md5.h ../lib/curl_hmac.h ../lib/warnless.h \
+ ../lib/curl_base64.h ../lib/curl_printf.h ../include/curl/mprintf.h \
+ ../lib/curl_memory.h ../lib/memdebug.h
+
+../lib/curl_setup.h:
+
+../lib/curl_config.h:
+
+../include/curl/curlbuild.h:
+
+/mnt/data/Source/personal/prototypes/albase/build/include/sys/types.h:
+
+/mnt/data/Source/personal/prototypes/albase/build/include/features.h:
+
+/mnt/data/Source/personal/prototypes/albase/build/include/bits/alltypes.h:
+
+/mnt/data/Source/personal/prototypes/albase/build/include/endian.h:
+
+/mnt/data/Source/personal/prototypes/albase/build/include/stdint.h:
+
+/mnt/data/Source/personal/prototypes/albase/build/include/bits/stdint.h:
+
+/mnt/data/Source/personal/prototypes/albase/build/include/sys/select.h:
+
+/mnt/data/Source/personal/prototypes/albase/build/include/sys/sysmacros.h:
+
+/mnt/data/Source/personal/prototypes/albase/build/include/sys/socket.h:
+
+/mnt/data/Source/personal/prototypes/albase/build/include/bits/socket.h:
+
+../include/curl/curlrules.h:
+
+/mnt/data/Source/personal/prototypes/albase/build/include/stdio.h:
+
+/mnt/data/Source/personal/prototypes/albase/build/include/assert.h:
+
+../lib/curl_setup_once.h:
+
+/mnt/data/Source/personal/prototypes/albase/build/include/stdlib.h:
+
+/mnt/data/Source/personal/prototypes/albase/build/include/alloca.h:
+
+/mnt/data/Source/personal/prototypes/albase/build/include/string.h:
+
+/mnt/data/Source/personal/prototypes/albase/build/include/strings.h:
+
+/mnt/data/Source/personal/prototypes/albase/build/include/stdarg.h:
+
+/mnt/data/Source/personal/prototypes/albase/build/include/ctype.h:
+
+/mnt/data/Source/personal/prototypes/albase/build/include/errno.h:
+
+/mnt/data/Source/personal/prototypes/albase/build/include/bits/errno.h:
+
+/mnt/data/Source/personal/prototypes/albase/build/include/sys/stat.h:
+
+/mnt/data/Source/personal/prototypes/albase/build/include/bits/stat.h:
+
+/mnt/data/Source/personal/prototypes/albase/build/include/sys/time.h:
+
+/mnt/data/Source/personal/prototypes/albase/build/include/time.h:
+
+/mnt/data/Source/personal/prototypes/albase/build/include/stdbool.h:
+
+/mnt/data/Source/personal/prototypes/albase/build/include/unistd.h:
+
+/mnt/data/Source/personal/prototypes/albase/build/include/bits/posix.h:
+
+/mnt/data/Source/personal/prototypes/albase/build/include/fcntl.h:
+
+/mnt/data/Source/personal/prototypes/albase/build/include/bits/fcntl.h:
+
+../lib/urldata.h:
+
+../lib/curl_setup.h:
+
+../lib/cookie.h:
+
+../include/curl/curl.h:
+
+../include/curl/curlver.h:
+
+../include/curl/curlbuild.h:
+
+../include/curl/curlrules.h:
+
+/mnt/data/Source/personal/prototypes/albase/build/include/limits.h:
+
+/mnt/data/Source/personal/prototypes/albase/build/include/bits/limits.h:
+
+../include/curl/easy.h:
+
+../include/curl/multi.h:
+
+../include/curl/curl.h:
+
+../include/curl/typecheck-gcc.h:
+
+../lib/formdata.h:
+
+/mnt/data/Source/personal/prototypes/albase/build/include/netinet/in.h:
+
+/mnt/data/Source/personal/prototypes/albase/build/include/inttypes.h:
+
+../lib/timeval.h:
+
+../lib/http_chunks.h:
+
+../lib/hostip.h:
+
+../lib/hash.h:
+
+/mnt/data/Source/personal/prototypes/albase/build/include/stddef.h:
+
+../lib/llist.h:
+
+../lib/curl_addrinfo.h:
+
+/mnt/data/Source/personal/prototypes/albase/build/include/netdb.h:
+
+/mnt/data/Source/personal/prototypes/albase/build/include/arpa/inet.h:
+
+../lib/asyn.h:
+
+/mnt/data/Source/personal/prototypes/albase/build/include/setjmp.h:
+
+/mnt/data/Source/personal/prototypes/albase/build/include/bits/setjmp.h:
+
+../lib/splay.h:
+
+../lib/imap.h:
+
+../lib/pingpong.h:
+
+../lib/curl_sasl.h:
+
+../lib/pop3.h:
+
+../lib/smtp.h:
+
+../lib/ftp.h:
+
+../lib/file.h:
+
+../lib/ssh.h:
+
+../lib/http.h:
+
+../lib/rtsp.h:
+
+../lib/smb.h:
+
+../lib/wildcard.h:
+
+../lib/multihandle.h:
+
+../lib/conncache.h:
+
+vtls/vtls.h:
+
+vtls/openssl.h:
+
+vtls/gtls.h:
+
+vtls/nssg.h:
+
+vtls/gskit.h:
+
+vtls/polarssl.h:
+
+vtls/axtls.h:
+
+vtls/cyassl.h:
+
+vtls/schannel.h:
+
+vtls/darwinssl.h:
+
+vtls/mbedtls.h:
+
+../lib/slist.h:
+
+../lib/sendf.h:
+
+../lib/rawstr.h:
+
+../lib/url.h:
+
+../lib/progress.h:
+
+../lib/share.h:
+
+../lib/urldata.h:
+
+../lib/timeval.h:
+
+../lib/curl_md5.h:
+
+../lib/curl_hmac.h:
+
+../lib/warnless.h:
+
+../lib/curl_base64.h:
+
+../lib/curl_printf.h:
+
+../include/curl/mprintf.h:
+
+../lib/curl_memory.h:
+
+../lib/memdebug.h:

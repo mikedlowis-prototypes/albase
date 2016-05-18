@@ -10,7 +10,7 @@ SDHCP_OBJS   = $(patsubst $(SDHCP_SUBDIR)/%,$(SDHCP_OBJDIR)/%.o,$(basename $(SDH
 SDHCP_INCS   = -I$(BUILDDIR)/include
 SDHCP_DEFS   =
 
-sdhcp: headers $(BINDIR)/sdhcp
+sdhcp: $(BINDIR)/sdhcp
 
 $(BINDIR)/sdhcp: $(SDHCP_OBJS)
 	$(CC) -o $@ $^

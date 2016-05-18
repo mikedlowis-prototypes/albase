@@ -1,0 +1,131 @@
+libcurl_la-llist.lo: llist.c curl_setup.h curl_config.h \
+ ../include/curl/curlbuild.h \
+ /mnt/data/Source/personal/prototypes/albase/build/include/sys/types.h \
+ /mnt/data/Source/personal/prototypes/albase/build/include/features.h \
+ /mnt/data/Source/personal/prototypes/albase/build/include/bits/alltypes.h \
+ /mnt/data/Source/personal/prototypes/albase/build/include/endian.h \
+ /mnt/data/Source/personal/prototypes/albase/build/include/stdint.h \
+ /mnt/data/Source/personal/prototypes/albase/build/include/bits/stdint.h \
+ /mnt/data/Source/personal/prototypes/albase/build/include/sys/select.h \
+ /mnt/data/Source/personal/prototypes/albase/build/include/sys/sysmacros.h \
+ /mnt/data/Source/personal/prototypes/albase/build/include/sys/socket.h \
+ /mnt/data/Source/personal/prototypes/albase/build/include/bits/socket.h \
+ ../include/curl/curlrules.h \
+ /mnt/data/Source/personal/prototypes/albase/build/include/stdio.h \
+ /mnt/data/Source/personal/prototypes/albase/build/include/assert.h \
+ curl_setup_once.h \
+ /mnt/data/Source/personal/prototypes/albase/build/include/stdlib.h \
+ /mnt/data/Source/personal/prototypes/albase/build/include/alloca.h \
+ /mnt/data/Source/personal/prototypes/albase/build/include/string.h \
+ /mnt/data/Source/personal/prototypes/albase/build/include/strings.h \
+ /mnt/data/Source/personal/prototypes/albase/build/include/stdarg.h \
+ /mnt/data/Source/personal/prototypes/albase/build/include/ctype.h \
+ /mnt/data/Source/personal/prototypes/albase/build/include/errno.h \
+ /mnt/data/Source/personal/prototypes/albase/build/include/bits/errno.h \
+ /mnt/data/Source/personal/prototypes/albase/build/include/sys/stat.h \
+ /mnt/data/Source/personal/prototypes/albase/build/include/bits/stat.h \
+ /mnt/data/Source/personal/prototypes/albase/build/include/sys/time.h \
+ /mnt/data/Source/personal/prototypes/albase/build/include/time.h \
+ /mnt/data/Source/personal/prototypes/albase/build/include/stdbool.h \
+ /mnt/data/Source/personal/prototypes/albase/build/include/unistd.h \
+ /mnt/data/Source/personal/prototypes/albase/build/include/bits/posix.h \
+ llist.h \
+ /mnt/data/Source/personal/prototypes/albase/build/include/stddef.h \
+ curl_memory.h ../include/curl/curl.h ../include/curl/curlver.h \
+ ../include/curl/curlbuild.h ../include/curl/curlrules.h \
+ /mnt/data/Source/personal/prototypes/albase/build/include/limits.h \
+ /mnt/data/Source/personal/prototypes/albase/build/include/bits/limits.h \
+ ../include/curl/easy.h ../include/curl/multi.h ../include/curl/curl.h \
+ ../include/curl/typecheck-gcc.h memdebug.h
+
+curl_setup.h:
+
+curl_config.h:
+
+../include/curl/curlbuild.h:
+
+/mnt/data/Source/personal/prototypes/albase/build/include/sys/types.h:
+
+/mnt/data/Source/personal/prototypes/albase/build/include/features.h:
+
+/mnt/data/Source/personal/prototypes/albase/build/include/bits/alltypes.h:
+
+/mnt/data/Source/personal/prototypes/albase/build/include/endian.h:
+
+/mnt/data/Source/personal/prototypes/albase/build/include/stdint.h:
+
+/mnt/data/Source/personal/prototypes/albase/build/include/bits/stdint.h:
+
+/mnt/data/Source/personal/prototypes/albase/build/include/sys/select.h:
+
+/mnt/data/Source/personal/prototypes/albase/build/include/sys/sysmacros.h:
+
+/mnt/data/Source/personal/prototypes/albase/build/include/sys/socket.h:
+
+/mnt/data/Source/personal/prototypes/albase/build/include/bits/socket.h:
+
+../include/curl/curlrules.h:
+
+/mnt/data/Source/personal/prototypes/albase/build/include/stdio.h:
+
+/mnt/data/Source/personal/prototypes/albase/build/include/assert.h:
+
+curl_setup_once.h:
+
+/mnt/data/Source/personal/prototypes/albase/build/include/stdlib.h:
+
+/mnt/data/Source/personal/prototypes/albase/build/include/alloca.h:
+
+/mnt/data/Source/personal/prototypes/albase/build/include/string.h:
+
+/mnt/data/Source/personal/prototypes/albase/build/include/strings.h:
+
+/mnt/data/Source/personal/prototypes/albase/build/include/stdarg.h:
+
+/mnt/data/Source/personal/prototypes/albase/build/include/ctype.h:
+
+/mnt/data/Source/personal/prototypes/albase/build/include/errno.h:
+
+/mnt/data/Source/personal/prototypes/albase/build/include/bits/errno.h:
+
+/mnt/data/Source/personal/prototypes/albase/build/include/sys/stat.h:
+
+/mnt/data/Source/personal/prototypes/albase/build/include/bits/stat.h:
+
+/mnt/data/Source/personal/prototypes/albase/build/include/sys/time.h:
+
+/mnt/data/Source/personal/prototypes/albase/build/include/time.h:
+
+/mnt/data/Source/personal/prototypes/albase/build/include/stdbool.h:
+
+/mnt/data/Source/personal/prototypes/albase/build/include/unistd.h:
+
+/mnt/data/Source/personal/prototypes/albase/build/include/bits/posix.h:
+
+llist.h:
+
+/mnt/data/Source/personal/prototypes/albase/build/include/stddef.h:
+
+curl_memory.h:
+
+../include/curl/curl.h:
+
+../include/curl/curlver.h:
+
+../include/curl/curlbuild.h:
+
+../include/curl/curlrules.h:
+
+/mnt/data/Source/personal/prototypes/albase/build/include/limits.h:
+
+/mnt/data/Source/personal/prototypes/albase/build/include/bits/limits.h:
+
+../include/curl/easy.h:
+
+../include/curl/multi.h:
+
+../include/curl/curl.h:
+
+../include/curl/typecheck-gcc.h:
+
+memdebug.h:

@@ -97,7 +97,7 @@ $(LIBDIR)/crti.o: $(MUSL_SUBDIR)/crt/x86_64/crti.s
 $(LIBDIR)/crtn.o: $(MUSL_SUBDIR)/crt/x86_64/crtn.s
 	$(MUSL_CC_CMD) -DCRT -c -o $@ $<
 
-$(BINDIR)/musl-gcc: $(LIBDIR)/libc.a $(LIBDIR)/musl-gcc.specs
+$(BINDIR)/musl-gcc: $(LIBDIR)/libc.a $(MUSL_CRT_OBJS) $(LIBDIR)/musl-gcc.specs
 	printf '#!/bin/sh\nexec "$${REALGCC:-$(WRAPCC_GCC)}" "$$@" -specs "%s/musl-gcc.specs"\n' "$(PWD)/$(LIBDIR)" > $@
 	chmod +x $@
 

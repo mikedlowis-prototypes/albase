@@ -10,7 +10,7 @@ SMDEV_OBJS   = $(patsubst $(SMDEV_SUBDIR)/%,$(SMDEV_OBJDIR)/%.o,$(basename $(SMD
 SMDEV_INCS   = -I$(BUILDDIR)/include
 SMDEV_DEFS   =
 
-smdev: headers $(BINDIR)/smdev
+smdev: $(BINDIR)/smdev
 
 $(BINDIR)/smdev: $(SMDEV_OBJS)
 	$(CC) -o $@ $^

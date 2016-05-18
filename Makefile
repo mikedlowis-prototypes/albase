@@ -55,6 +55,7 @@ include source/shadow/Rules.mk
 include source/smdev/Rules.mk
 include source/sdhcp/Rules.mk
 include source/iproute2/Rules.mk
+include source/curl/Rules.mk
 
 .PHONY: all headers $(PHONY)
 
