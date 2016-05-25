@@ -56,16 +56,17 @@ include source/smdev/Rules.mk
 include source/sdhcp/Rules.mk
 include source/iproute2/Rules.mk
 include source/curl/Rules.mk
+include source/kernel/Rules.mk
 include etc/Rules.mk
 
-.PHONY: all headers $(PHONY)
+.PHONY: all $(PHONY)
 
 all: $(PHONY)
 
-stage1: all
+stage1: $(PHONY)
 	cd $(BUILDDIR) && tar -cJf ../stage1.tar.xz . --exclude obj --exclude dummy
 
-clean:
+clean: kernel-clean
 	@echo cleaning
 	@$(RM) $(BUILDDIR)/dummy $(ECLEAN)
 	@$(RM) -r $(BUILDDIR)/include
