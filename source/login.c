@@ -4,10 +4,11 @@
   @license BSD 2-clause License
 */
 #include "util.h"
+#include <sys/ioctl.h>
 #include <unistd.h>
 #include <pwd.h>
+#include <grp.h>
 #include <shadow.h>
-#include <sys/ioctl.h>
 
 #define ENV_PATH "/bin"
 
@@ -46,7 +47,7 @@ static char* get_pass(void) {
 }
 
 static struct passwd* check_pass(const char* user, char* pass) {
-    struct spwd* spw;
+    struct spwd* spw = NULL;
     /* get the passwd entry */
     struct passwd* pwentry = getpwnam(user);
     if (!pwentry || errno)
@@ -58,7 +59,7 @@ static struct passwd* check_pass(const char* user, char* pass) {
     }
     /* Handle blank pass or blank pass entry */
     if ((pwentry->pw_passwd[0] == '\0') || (pass[0] == '\0')) {
-        warn("incorrect password\n");
+        warn("blank passwords are not allowed\n");
         return NULL;
     }
     /* Get the shadow entry */
@@ -66,16 +67,18 @@ static struct passwd* check_pass(const char* user, char* pass) {
         errno = 0;
         spw = getspnam(pwentry->pw_name);
         if (!spw || errno)
-            die("could not retrieve shadow entry for %s", user);
+            die("could not retrieve shadow entry for %s: %s", pwentry->pw_name, errnostr());
 
         if (spw->sp_pwdp[0] == '!' || spw->sp_pwdp[0] == '*') {
             warn("access denied\n");
             return NULL;
         }
+
     }
     /* Check the password */
-    char* cryptpass = crypt(pass, spw->sp_pwdp);
-    if (strcmp(cryptpass, spw->sp_pwdp) != 0) {
+    char* refpass   = (spw ? spw->sp_pwdp : pwentry->pw_passwd);
+    char* cryptpass = crypt(pass, refpass);
+    if (strcmp(cryptpass, refpass) != 0) {
         warn("incorrect password");
         return NULL;
     }
