@@ -12,5 +12,5 @@ login: $(BINDIR)/login
 dmesg: $(BINDIR)/dmesg
 mount: $(BINDIR)/mount
 
-$(BINDIR)/%: $(SRC_SUBDIR)/%.c $(CC)
-	$(BUILD)
+$(BINDIR)/%: $(SRC_SUBDIR)/%.c
+	$(BUILD) -lcrypt

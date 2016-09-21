@@ -15,6 +15,6 @@ sdhcp: $(BINDIR)/sdhcp
 $(BINDIR)/sdhcp: $(SDHCP_OBJS)
 	$(CC) -o $@ $^
 
-$(SDHCP_OBJDIR)/%.o: $(SDHCP_SUBDIR)/%.c $(CC)
+$(SDHCP_OBJDIR)/%.o: $(SDHCP_SUBDIR)/%.c
 	$(CC) $(SDHCP_INCS) $(SDHCP_DEFS) -c -o $@ $<
 

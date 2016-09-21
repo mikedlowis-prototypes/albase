@@ -12,3 +12,9 @@ if [ ! -d musl-cross-make/stage2 ]; then
     make all install
     make clean
 fi
+if [ ! -f config.mk ]; then
+    echo 'export PATH := $(PWD)/musl-corss-make/stage2/bin:$(PATH)' >> config.mk
+    echo 'CC = x86_64-linux-musl-gcc' >> config.mk
+    echo 'LD = $(CC)' >> config.mk
+    echo 'AR = x86_64-linux-musl-ar' >> config.mk
+fi

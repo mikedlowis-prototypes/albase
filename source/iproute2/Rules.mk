@@ -39,5 +39,5 @@ $(BINDIR)/%:
 $(IPROUTE2_OBJDIR)/%.a:
 	$(AR) $(ARFLAGS) $@ $^
 
-$(IPROUTE2_OBJDIR)/%.o: $(IPROUTE2_SUBDIR)/%.c $(CC)
+$(IPROUTE2_OBJDIR)/%.o: $(IPROUTE2_SUBDIR)/%.c
 	$(CC) $(IPROUTE2_FLAGS) $(IPROUTE2_INCS) -c -o $@ $<

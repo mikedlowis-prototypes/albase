@@ -22,5 +22,5 @@ $(BINDIR)/curl: $(CURL_OBJS) $(CURL_LIB)
 
 $(CURL_LIB): $(CURL_LIB_OBJS)
 
-$(CURL_OBJDIR)/%.o: $(CURL_SUBDIR)/%.c $(CC)
+$(CURL_OBJDIR)/%.o: $(CURL_SUBDIR)/%.c
 	$(CC) $(CURL_INCS) $(CURL_DEFS) $(CURL_CFLAGS) -c -o $@ $<

@@ -15,6 +15,6 @@ smdev: $(BINDIR)/smdev
 $(BINDIR)/smdev: $(SMDEV_OBJS)
 	$(CC) -o $@ $^
 
-$(SMDEV_OBJDIR)/%.o: $(SMDEV_SUBDIR)/%.c $(CC)
+$(SMDEV_OBJDIR)/%.o: $(SMDEV_SUBDIR)/%.c
 	$(CC) $(SMDEV_INCS) $(SMDEV_DEFS) -c -o $@ $<
 

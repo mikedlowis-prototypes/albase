@@ -93,8 +93,8 @@ MKSH_DEFINES =                    \
 
 $(MKSH_BIN): $(BINDIR)/$(MKSH_BIN)
 
-$(BINDIR)/$(MKSH_BIN): $(MKSH_OBJS) $(CC)
+$(BINDIR)/$(MKSH_BIN): $(MKSH_OBJS)
 	$(LD) -o $@ $(MKSH_OBJS) $(LDFLAGS)
 
-$(MKSH_OBJDIR)/%.o: $(MKSH_SUBDIR)/%.c $(CC)
+$(MKSH_OBJDIR)/%.o: $(MKSH_SUBDIR)/%.c
 	$(CC) $(CFLAGS) -I$(MKSH_SUBDIR) $(MKSH_DEFINES) -c -o $@ $^

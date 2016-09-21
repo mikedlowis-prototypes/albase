@@ -5,8 +5,7 @@
 ARCH = x86_64
 
 # tools
-REALCC = gcc
-CC     = $(BINDIR)/musl-gcc
+CC     = cc
 LD     = $(CC)
 AR     = ar
 
@@ -43,10 +42,18 @@ DIRS   = $(BUILDDIR) $(BINDIR) $(LIBDIR) $(OBJDIR) \
          $(BUILDDIR)/tmp       \
          $(BUILDDIR)/var
 
+# optionally override settings
+-include config.mk
+
 #------------------------------------------------------------------------------
 # Build Rules
 #------------------------------------------------------------------------------
-include source/musl/Rules.mk
+# TODO: Determine if this is needed anymore now that we have a musl-based cross compiler
+#include source/musl/Rules.mk
+#
+# TODO: Fix an issue where libcurl.a is refusing to build for some reason
+#include source/curl/Rules.mk
+
 include source/Rules.mk
 include source/ubase/Rules.mk
 include source/sbase/Rules.mk
@@ -55,7 +62,6 @@ include source/shadow/Rules.mk
 include source/smdev/Rules.mk
 include source/sdhcp/Rules.mk
 include source/iproute2/Rules.mk
-include source/curl/Rules.mk
 include source/kernel/Rules.mk
 include etc/Rules.mk
 
