@@ -3,3 +3,6 @@ cscope.out
 project.vim
 build/
 stage1.tar.xz
+musl-cross-make/stage1
+musl-cross-make/stage2
+musl-cross-make/sources/
