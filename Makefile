@@ -76,7 +76,7 @@ clean: kernel-clean
 	@echo cleaning
 	@$(RM) $(BUILDDIR)/dummy $(ECLEAN)
 	@$(RM) -r $(BUILDDIR)/include
-	@$(RM) stage1.tar.xz
+	@$(RM) albase.iso stage1.tar.xz iso9660/isolinux/vmlinuz iso9660/isolinux/initrd.img
 
 # load dependency files if they exist
 -include $(DEPS)
