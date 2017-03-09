@@ -14,8 +14,8 @@ LIBS     =
 INCS     = -Iinclude
 DEFS     = -D_XOPEN_SOURCE=700 -D_POSIX_C_SOURCE=200809L
 CPPFLAGS = $(INCS) $(DEFS)
-CFLAGS   = -O2 --std=gnu99
-LDFLAGS  = $(LIBS)
+CFLAGS   = --static -O2 --std=gnu99
+LDFLAGS  = --static $(LIBS)
 ARFLAGS  = rcs
 
 # commands
@@ -61,7 +61,7 @@ include source/sh/Rules.mk
 include source/shadow/Rules.mk
 include source/smdev/Rules.mk
 include source/sdhcp/Rules.mk
-include source/iproute2/Rules.mk
+#include source/iproute2/Rules.mk
 include source/kernel/Rules.mk
 include etc/Rules.mk
 
@@ -77,6 +77,10 @@ clean: kernel-clean
 	@$(RM) $(BUILDDIR)/dummy $(ECLEAN)
 	@$(RM) -r $(BUILDDIR)/include
 	@$(RM) albase.iso stage1.tar.xz iso9660/isolinux/vmlinuz iso9660/isolinux/initrd.img
+	@$(RM) $(BUILDDIR)/boot/* $(BUILDDIR)/bin/* $(BUILDDIR)/init
+
+dist-clean:
+	@$(RM) -r $(BUILDDIR) musl-cross-make/stage1 musl-cross-make/stage2 config.mk
 
 # load dependency files if they exist
 -include $(DEPS)

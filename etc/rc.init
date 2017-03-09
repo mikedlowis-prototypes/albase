@@ -7,7 +7,7 @@ mkdir /dev/pts
 mkdir /dev/shm
 dmesg -n 1
 clear
-getty /dev/tty1 &
-getty /dev/tty2 &
-getty /dev/tty3 &
-#exec /bin/sh
+#getty /dev/tty1 &
+#getty /dev/tty2 &
+#getty /dev/tty3 &
+exec /bin/sh

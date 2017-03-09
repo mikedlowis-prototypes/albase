@@ -11,6 +11,6 @@ The goals of the project are as follows:
 
 ## Building
 
-    # Optional: build the musl-based cross compiler and use that for the build
     ./bootstrap.sh
-    make stage1
+    make all
+    ./buildiso.sh
